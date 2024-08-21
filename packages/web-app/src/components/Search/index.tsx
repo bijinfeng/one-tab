@@ -1,13 +1,18 @@
 import { CloseOne } from "@icon-park/react"
 import { Popover, PopoverContent, PopoverTrigger } from "@pingtou/shadcn-ui"
 import { useState } from "react"
+import { useRequest } from "ahooks"
 
 import { IconButton } from "../IconButton"
 import { useSearchStore } from "@/store/search"
+import { getSearchSuggestion } from "@/api"
 
 export function Search() {
   const [open, setOpen] = useState(false)
   const [keyword, setKeyword] = useState("")
+  const { data, run } = useRequest(() => getSearchSuggestion(keyword), {
+    refreshDeps: [keyword],
+  })
 
   const { currentId, defaultList } = useSearchStore()
   const currentEngine = defaultList.find(item => item.id === currentId)!
