@@ -3,15 +3,16 @@ import { Popover, PopoverContent, PopoverTrigger } from "@pingtou/shadcn-ui"
 import { useRequest } from "ahooks"
 import { useState } from "react"
 
+import { IconButton } from "../IconButton"
 import { getSearchSuggestion } from "@/api"
 import { useSearchStore } from "@/store/search"
-import { IconButton } from "../IconButton"
 
 export function Search() {
   const [open, setOpen] = useState(false)
   const [keyword, setKeyword] = useState("")
 
-  // @ts-ignore
+  // eslint-disable-next-line ts/ban-ts-comment
+  // @ts-expect-error
   const _data = useRequest(() => getSearchSuggestion(keyword), {
     refreshDeps: [keyword],
   })
