@@ -1,23 +1,23 @@
 {
-  "name": "web-app",
+  "name": "@one-tab/web-app",
   "type": "module",
   "version": "0.0.0",
-  "private": true,
+  "module": "esm/App.js",
+  "types": "esm/App.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:lib": "father build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@icon-park/react": "^1.4.2",
-    "@pingtou/shadcn-ui": "^1.0.0",
+    "@pingtou/shadcn-ui": "^1.0.1",
     "ahooks": "^3.8.1",
     "axios": "^1.7.4",
     "idb-keyval": "^6.2.1",
     "lodash-es": "^4.17.21",
     "nanoid": "^5.0.7",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "zustand": "^4.5.5"
   },
   "devDependencies": {
@@ -26,11 +26,14 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
+    "father": "^4.5.0",
     "globals": "^15.9.0",
     "less": "^4.2.0",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.3",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
