@@ -23,7 +23,9 @@ concurrency:
 jobs:
   # 单次部署的工作描述
   deploy:
-    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
