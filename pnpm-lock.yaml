@@ -93,6 +93,9 @@ importers:
       '@icon-park/react':
         specifier: ^1.4.2
         version: 1.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@pingtou/axios-jsonp':
+        specifier: ^0.0.1
+        version: 0.0.1(axios@1.7.4)
       '@pingtou/shadcn-ui':
         specifier: ^1.0.1
         version: 1.0.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(next@14.2.5(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.10)
@@ -1256,6 +1259,11 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
+
+  '@pingtou/axios-jsonp@0.0.1':
+    resolution: {integrity: sha512-zOESX2ePgsaigt6Xw2UgWvT9sr8hkfJ5KtwGeQBvhh7WcaLy7A9zdtF/7OySS63QLnCu5KE5RiBZNnMQbeUAhQ==}
+    peerDependencies:
+      axios: ^1.7.4
 
   '@pingtou/shadcn-ui@1.0.1':
     resolution: {integrity: sha512-HpseyJFaD8PK4YT1/KuKqtD5LLho4Gbfwlob1S/SPkBismnDZYIXaf/fxtTGfl5WmoIsYPFu8cow/P1cI7xyJA==}
@@ -2698,7 +2706,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
   array-ify@1.0.0:
-    resolution: {integrity: sha512-c5AMf34bKdvPhQ7tBGhqkgKNUzMr4WUs+WDtC2ZUGOUncbxKMTvqxYctiseW3+L4bA8ec+GcZ6/A/FW4m8ukng==}
+    resolution: {integrity: sha1-nlKHYrSpBmrRY6aWKjZEGOlibs4=}
 
   array-includes@3.1.7:
     resolution: {integrity: sha512-dlcsNBIiWhPkHdOEEKnehA+RNUWDc4UqFtnIXU4uuYDPtA4LDkr7qip2p0VvFAEXNDr0yWZ9PJyIRiGjRLQzwQ==}
@@ -8385,6 +8393,10 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.0
+
+  '@pingtou/axios-jsonp@0.0.1(axios@1.7.4)':
+    dependencies:
+      axios: 1.7.4
 
   '@pingtou/shadcn-ui@1.0.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(next@14.2.5(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.10)':
     dependencies:

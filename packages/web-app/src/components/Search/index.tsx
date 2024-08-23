@@ -1,28 +1,37 @@
 import { CloseOne } from "@icon-park/react"
 import { Popover, PopoverContent, PopoverTrigger } from "@pingtou/shadcn-ui"
 import { useRequest } from "ahooks"
+import { isEmpty } from "lodash-es"
 import { useState } from "react"
 
 import { IconButton } from "../IconButton"
-import { getSearchSuggestion } from "@/api"
+import { EngineList } from "./EngineList"
+import { SuggetionList } from "./SuggestionList"
 import { useSearchStore } from "@/store/search"
+import { getSearchSuggestion } from "@/api"
 
 export function Search() {
   const [open, setOpen] = useState(false)
   const [keyword, setKeyword] = useState("")
 
-  // eslint-disable-next-line ts/ban-ts-comment
-  // @ts-expect-error
-  const _data = useRequest(() => getSearchSuggestion(keyword), {
+  const { data = [] } = useRequest(() => getSearchSuggestion(keyword), {
     refreshDeps: [keyword],
   })
 
   const { currentId, defaultList } = useSearchStore()
   const currentEngine = defaultList.find(item => item.id === currentId)!
 
+  const handleFocus = () => {
+    !isEmpty(data) && setOpen(true)
+  }
+
+  const handleSearch = (text: string) => {
+    window.open(currentEngine.target.replace("%s", encodeURIComponent(text)))
+  }
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter")
-      window.open(currentEngine.target.replace("%s", encodeURIComponent(keyword)))
+      handleSearch(keyword)
   }
 
   return (
@@ -44,6 +53,7 @@ export function Search() {
               className="h-full flex-1 py-3 pl-1 pr-[42px] bg-[transparent] text-color-t1 placeholder:text-color-t1 placeholder:text-opacity-40 outline-none text-base"
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
+              onFocus={handleFocus}
               onKeyDown={handleKeyDown}
             />
 
@@ -58,10 +68,10 @@ export function Search() {
         </PopoverTrigger>
         <PopoverContent
           align="start"
-          className="w-[568px] engine-box glass-card border-color-white border-opacity-40 bg-color-m1 bg-opacity-80 px-[20px] pt-[20px] pb-[24px] dark:border-opacity-10 dark:bg-opacity-70"
+          className="w-[568px] p-0 border-color-white border-opacity-40 bg-color-m1 bg-opacity-80 dark:border-opacity-10 dark:bg-opacity-70"
           onPointerDownOutside={() => setOpen(false)}
         >
-          xxx
+          {isEmpty(data) ? <EngineList /> : <SuggetionList list={data} onItemClick={handleSearch} />}
         </PopoverContent>
       </Popover>
     </div>
