@@ -1,7 +1,7 @@
 {
   "name": "@one-tab/web-app",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "module": "esm/App.js",
   "types": "esm/App.d.ts",
   "scripts": {
@@ -19,6 +19,7 @@
     "@pingtou/shadcn-ui": "^1.0.1",
     "ahooks": "^3.8.1",
     "axios": "^1.7.4",
+    "eventemitter3": "^5.0.1",
     "idb-keyval": "^6.2.1",
     "lodash-es": "^4.17.21",
     "nanoid": "^5.0.7",

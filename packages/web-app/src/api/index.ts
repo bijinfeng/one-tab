@@ -13,7 +13,7 @@ export async function getSearchSuggestion(keyword: string) {
   cancelSource = CancelToken.source()
 
   const res = await axios.get<{ s: string[] }>(
-    `https://suggestion.baidu.com/su?wd=${keyword}&p=3`,
+    `https://suggestion.baidu.com/su?wd=${keyword}`,
     {
       cancelToken: cancelSource.token,
       adapter: jsonpAdapter,
