@@ -8,14 +8,16 @@ export interface SearchStoreState {
   currentId: string
   currentIdList: string[]
   defaultList: typeof searchEngineMap
+  setCurrentId: (id: string) => void
 }
 
 export const useSearchStore = create<SearchStoreState>()(
   persist(
-    () => ({
+    set => ({
       currentId: "0",
       currentIdList: ["0", "2", "1"],
       defaultList: searchEngineMap,
+      setCurrentId: (id: string) => set({ currentId: id }),
     }),
     {
       name: "onetab-search", // unique name

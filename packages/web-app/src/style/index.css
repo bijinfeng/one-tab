@@ -87,3 +87,19 @@
   backdrop-filter: blur(40px);
   box-shadow: 0 4px 16px -4px #0000000d;
 }
+
+.glass-card {
+  backdrop-filter: blur(40px);
+  border: 1px solid;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px 0 #00000026;
+}
+
+.hi-close {
+  box-shadow: 0 4px 16px 0 #00000026;
+}
+
+.hi-close:hover .icon-close_icon {
+  color: rgb(var(--color-t3) / 1);
+  transform: rotate(180deg);
+}
