@@ -7,7 +7,7 @@ import sougouIcon from "@/assets/sougou.png"
 import yahooIcon from "@/assets/yahoo.png"
 import yandexIcon from "@/assets/yandex.png"
 
-export const searchEngineMap = [
+export const searchEngineMap: OneTab.EngineInfo[] = [
   {
     id: "0",
     name: "百度",

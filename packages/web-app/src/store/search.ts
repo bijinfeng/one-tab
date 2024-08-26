@@ -7,8 +7,9 @@ import { idbStorage } from "@/utils/persist"
 export interface SearchStoreState {
   currentId: string
   currentIdList: string[]
-  defaultList: typeof searchEngineMap
+  defaultList: OneTab.EngineInfo[]
   setCurrentId: (id: string) => void
+  updateCurrentIdList: (list: string[]) => void
 }
 
 export const useSearchStore = create<SearchStoreState>()(
@@ -18,6 +19,7 @@ export const useSearchStore = create<SearchStoreState>()(
       currentIdList: ["0", "2", "1"],
       defaultList: searchEngineMap,
       setCurrentId: (id: string) => set({ currentId: id }),
+      updateCurrentIdList: (list: string[]) => set({ currentIdList: list }),
     }),
     {
       name: "onetab-search", // unique name
