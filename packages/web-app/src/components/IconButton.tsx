@@ -1,25 +1,45 @@
 import { cn } from "@pingtou/shadcn-ui";
-import type { FC, PropsWithChildren } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { forwardRef, PropsWithChildren } from "react";
 
-interface IconButtonProps extends React.HTMLAttributes<HTMLDivElement> {
-  size?: "default" | "large" | "small";
-  ghost?: boolean;
-}
+const iconButtonVariants = cva(
+  "icon-box flex cursor-pointer items-center justify-center rounded-[8px] transition-all bg-opacity-0 opacity-70 hover:opacity-100",
+  {
+    variants: {
+      size: {
+        default: "h-[28px] w-[28px]",
+        large: "h-[32px] w-[32px]",
+        huge: "h-[36px] w-[36px]",
+      },
+      ghost: {
+        true: "text-white hover:bg-color-black hover:bg-opacity-20",
+        false: "text-black hover:bg-color-white hover:bg-opacity-80",
+      },
+    },
+    defaultVariants: {
+      size: "default",
+      ghost: false,
+    },
+  },
+);
 
-export const IconButton: FC<PropsWithChildren<IconButtonProps>> = ({
-  children,
-  className,
-  ...rest
-}) => {
+interface IconButtonProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof iconButtonVariants> {}
+
+export const IconButton = forwardRef<
+  HTMLDivElement,
+  PropsWithChildren<IconButtonProps>
+>((props, ref) => {
+  const { children, className, size, ghost, ...rest } = props;
+
   return (
     <div
       {...rest}
-      className={cn(
-        "icon-box flex h-[28px] w-[28px] cursor-pointer items-center justify-center rounded-[8px] bg-opacity-80 hover:bg-color-white hover:bg-opacity-80",
-        className,
-      )}
+      ref={ref}
+      className={cn(iconButtonVariants({ size, ghost, className }))}
     >
       {children}
     </div>
   );
-};
+});
