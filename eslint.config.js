@@ -41,7 +41,7 @@ export default antfu(
       format,
     },
     rules: {
-      "format/prettier": ["error", { parser: "typescript", tabWidth: 2 }],
+      "format/prettier": ["error", { parser: "typescript", tabWidth: 2, printWidth: 120 }],
     },
   },
 )

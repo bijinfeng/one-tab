@@ -99,6 +99,9 @@ export default {
         wallpaper: "300ms",
       },
     },
+    fontFamily: {
+      "mind-demi-bold": ["mind-demi-bold"],
+    },
   },
   plugins: [],
 }

@@ -5,6 +5,7 @@ import { Search } from "./components/Search";
 import { Setting } from "./components/Setting";
 import { SideDock } from "./components/SideDock";
 import { Wallpaper } from "./components/Wallpaper";
+import { Widgets } from "./components/Widgets";
 import "./style/iconfont/style.css";
 import "./style/index.css";
 
@@ -12,8 +13,8 @@ function App() {
   return (
     <>
       <Wallpaper />
+      <Widgets />
       <Search />
-
       <SideDock />
       <Setting />
       <Minimalist />

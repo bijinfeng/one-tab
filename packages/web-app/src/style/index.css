@@ -83,6 +83,30 @@
   }
 }
 
+@font-face {
+  font-family: mind-bold;
+  src: url(https://static.infinitytab.com/font/NeverMind-Bold.ttf)
+    format("TrueType");
+}
+
+@font-face {
+  font-family: mind-demi-bold;
+  src: url(https://static.infinitytab.com/font/NeverMind-DemiBold.ttf)
+    format("TrueType");
+}
+
+@font-face {
+  font-family: mind-medium;
+  src: url(https://static.infinitytab.com/font/NeverMind-Medium.ttf)
+    format("TrueType");
+}
+
+@font-face {
+  font-family: mind-regular;
+  src: url(https://static.infinitytab.com/font/NeverMind-Regular.ttf)
+    format("TrueType");
+}
+
 .search-box {
   backdrop-filter: blur(40px);
   box-shadow: 0 4px 16px -4px #0000000d;

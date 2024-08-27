@@ -117,6 +117,9 @@ importers:
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
       eventemitter3:
         specifier: ^5.0.1
         version: 5.0.1
