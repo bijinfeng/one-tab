@@ -20,3 +20,11 @@ export async function getSearchSuggestion(keyword: string) {
 
   return res.data.s;
 }
+
+export const getHitokoto = async () => {
+  const res = await axios.get<{ from: string; hitokoto: string; from_who: string }>(
+    "https://v1.hitokoto.cn/?c=d&c=e&c=h&c=i&c=k",
+  );
+
+  return res.data;
+};

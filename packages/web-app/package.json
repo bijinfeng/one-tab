@@ -21,6 +21,7 @@
     "axios": "^1.7.4",
     "class-variance-authority": "^0.7.0",
     "dayjs": "^1.11.13",
+    "dayjs-lunar": "^0.0.1",
     "eventemitter3": "^5.0.1",
     "idb-keyval": "^6.2.1",
     "lodash-es": "^4.17.21",

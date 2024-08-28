@@ -127,3 +127,7 @@
   color: rgb(var(--color-t3) / 1);
   transform: rotate(180deg);
 }
+
+.scrollbar-none {
+  scrollbar-width: none;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>qmx</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="11.1每日一言" transform="translate(-819.000000, -1132.000000)" fill="#FFFFFF">
+            <g id="初次使用" transform="translate(100.000000, 828.000000)">
+                <g id="qmx" transform="translate(719.000000, 304.000000)">
+                    <rect id="矩形" opacity="0" x="0" y="0" width="20" height="20"></rect>
+                    <path d="M12,3 L12,12 L14,12 L14,18 L16,18 L18,11 L18,3 L12,3 Z M2,3 L2,12 L4,12 L4,18 L6,18 L8,11 L8,3 L2,3 Z" id="形状结合"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

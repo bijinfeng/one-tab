@@ -1,3 +1,4 @@
+import { useSettingStore } from "@/store/setting";
 import "@icon-park/react/styles/index.css";
 import "@pingtou/shadcn-ui/dist/esm/index.css";
 import { Minimalist } from "./components/Minimalist";
@@ -10,10 +11,12 @@ import "./style/iconfont/style.css";
 import "./style/index.css";
 
 function App() {
+  const { minimalistMode } = useSettingStore();
+
   return (
     <>
       <Wallpaper />
-      <Widgets />
+      {minimalistMode && <Widgets />}
       <Search />
       <SideDock />
       <Setting />

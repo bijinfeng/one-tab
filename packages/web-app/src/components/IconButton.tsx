@@ -7,6 +7,7 @@ const iconButtonVariants = cva(
   {
     variants: {
       size: {
+        small: "h-[24px] w-[24px]",
         default: "h-[28px] w-[28px]",
         large: "h-[32px] w-[32px]",
         huge: "h-[36px] w-[36px]",
@@ -23,22 +24,13 @@ const iconButtonVariants = cva(
   },
 );
 
-interface IconButtonProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof iconButtonVariants> {}
+interface IconButtonProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof iconButtonVariants> {}
 
-export const IconButton = forwardRef<
-  HTMLDivElement,
-  PropsWithChildren<IconButtonProps>
->((props, ref) => {
+export const IconButton = forwardRef<HTMLDivElement, PropsWithChildren<IconButtonProps>>((props, ref) => {
   const { children, className, size, ghost, ...rest } = props;
 
   return (
-    <div
-      {...rest}
-      ref={ref}
-      className={cn(iconButtonVariants({ size, ghost, className }))}
-    >
+    <div {...rest} ref={ref} className={cn(iconButtonVariants({ size, ghost, className }))}>
       {children}
     </div>
   );
