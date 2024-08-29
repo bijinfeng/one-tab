@@ -131,3 +131,11 @@
 .scrollbar-none {
   scrollbar-width: none;
 }
+
+.glass-sidbar {
+  backdrop-filter: saturate(200%) blur(40px);
+}
+
+.h-sidebar {
+  height: clamp(min(480px, 70%), 636px, 70%);
+}

@@ -8,6 +8,9 @@ export interface SettingStoreState {
   minimalistMode: boolean; // 是否开启精简模式
   minimalistSwitchBtnStatus: "show" | "auto-hide"; // 精简模式开关按钮状态: 显示/自动隐藏
 
+  leftBarDisplayStatus: "show" | "auto-hide" | "hide"; // 左侧栏显示状态: 显示/自动隐藏/隐藏
+  leftBarDisplaySide: "left" | "right"; // 左侧栏显示位置: 左侧/右侧
+
   showClock: boolean; // 是否显示时钟
   showCalendar: boolean; // 是否显示日历
   show24HR: boolean; // 是否显示24小时制
@@ -25,6 +28,9 @@ export const useSettingStore = create<SettingStoreState>()(
 
       minimalistMode: false,
       minimalistSwitchBtnStatus: "show",
+
+      leftBarDisplayStatus: "show",
+      leftBarDisplaySide: "left",
 
       showClock: true,
       showCalendar: true,
