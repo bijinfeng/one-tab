@@ -16,9 +16,9 @@ function App() {
   return (
     <>
       <Wallpaper />
-      {minimalistMode && <Widgets />}
       <Search />
-      <SideDock />
+      {minimalistMode && <Widgets />}
+      {!minimalistMode && <SideDock />}
       <Setting />
       <Minimalist />
     </>

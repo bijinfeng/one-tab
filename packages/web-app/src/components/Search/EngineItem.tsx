@@ -1,15 +1,16 @@
+import { useSearchStore } from "@/store/search";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { cn } from "@pingtou/shadcn-ui";
 import type { FC } from "react";
-import { useSearchStore } from "@/store/search";
 
 interface EngineItemProps {
   item: OneTab.EngineInfo;
   className?: string;
+  onSwitch?: (id: string) => void;
 }
 
-export const EngineItem: FC<EngineItemProps> = ({ item, className }) => {
+export const EngineItem: FC<EngineItemProps> = ({ item, className, onSwitch }) => {
   const { currentId, setCurrentId } = useSearchStore();
 
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: item.id });
@@ -17,6 +18,11 @@ export const EngineItem: FC<EngineItemProps> = ({ item, className }) => {
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
+  };
+
+  const handleClick = () => {
+    setCurrentId(item.id);
+    onSwitch?.(item.id);
   };
 
   return (
@@ -33,7 +39,7 @@ export const EngineItem: FC<EngineItemProps> = ({ item, className }) => {
           {...attributes}
           className="hi-icon flex items-center justify-center overflow-hidden bg-cover h-[24px] w-[24px] rounded-[6px]"
           style={{ backgroundImage: `url(${item.bgImage})`, backgroundColor: item.bgColor }}
-          onClick={() => setCurrentId(item.id)}
+          onClick={handleClick}
         />
       </div>
       <div className="text-[12px] mt-[4px] w-[60px] overflow-hidden text-ellipsis whitespace-nowrap text-center text-color-t3">
