@@ -10,6 +10,7 @@ export interface SettingStoreState {
 
   leftBarDisplayStatus: "show" | "auto-hide" | "hide"; // 左侧栏显示状态: 显示/自动隐藏/隐藏
   leftBarDisplaySide: "left" | "right"; // 左侧栏显示位置: 左侧/右侧
+  showCategoryTitle: boolean; // 是否显示分类标题
 
   showClock: boolean; // 是否显示时钟
   showCalendar: boolean; // 是否显示日历
@@ -31,6 +32,7 @@ export const useSettingStore = create<SettingStoreState>()(
 
       leftBarDisplayStatus: "show",
       leftBarDisplaySide: "left",
+      showCategoryTitle: false,
 
       showClock: true,
       showCalendar: true,

@@ -20,4 +20,10 @@ declare namespace OneTab {
     name: string;
     apps: AppInfo[];
   }
+
+  interface Celebrity {
+    from: string;
+    hitokoto: string;
+    from_who: string;
+  }
 }
