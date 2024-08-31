@@ -1,7 +1,8 @@
-import AddCircle from "@/assets/icons/addCircle.svg?react";
 import { IconButton } from "@/components/IconButton";
+import { AddCircle } from "@/icons";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, cn } from "@pingtou/shadcn-ui";
 
+import oneTabIcon from "@/assets/onetab.png";
 import { useAppStore } from "@/store/app";
 import { useSettingStore } from "@/store/setting";
 import { useState } from "react";
@@ -32,7 +33,7 @@ export function SideDock() {
         )}
       >
         <div className="shrink-0 cursor-pointer overflow-hidden rounded-[10px] bg-[rgba(255,255,255,0.4)] shadow-avatar">
-          <img className="h-[36px] w-[36px]" src="./onetab.png" />
+          <img className="h-[36px] w-[36px]" src={oneTabIcon} />
         </div>
 
         <div className="mt-[19px] h-[2px] w-[22px] shrink-0 rounded-[1px] bg-[rgba(0,0,0,0.15)]" />

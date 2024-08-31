@@ -3,9 +3,9 @@ import { useRequest } from "ahooks";
 import { FC } from "react";
 
 import { getHitokoto } from "@/api";
-import CommaIcon from "@/assets/icons/comma.svg?react";
 import { IconButton } from "@/components/IconButton";
 import { useClipboard } from "@/hooks";
+import { Comma as CommaIcon } from "@/icons";
 import { useCacheStore } from "@/store/cache";
 
 export const CalebrityWidget: FC = () => {

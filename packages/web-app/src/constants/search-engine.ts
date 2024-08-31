@@ -1,11 +1,11 @@
-import soIcon from "@/assets/360.png"
-import baicuIcon from "@/assets/baidu.png"
-import bingIcon from "@/assets/bing_new.png"
-import duckduckgoIcon from "@/assets/duckduckgo.png"
-import googleIcon from "@/assets/google.png"
-import sougouIcon from "@/assets/sougou.png"
-import yahooIcon from "@/assets/yahoo.png"
-import yandexIcon from "@/assets/yandex.png"
+import soIcon from "@/assets/engines/360.png";
+import baicuIcon from "@/assets/engines/baidu.png";
+import bingIcon from "@/assets/engines/bing_new.png";
+import duckduckgoIcon from "@/assets/engines/duckduckgo.png";
+import googleIcon from "@/assets/engines/google.png";
+import sougouIcon from "@/assets/engines/sougou.png";
+import yahooIcon from "@/assets/engines/yahoo.png";
+import yandexIcon from "@/assets/engines/yandex.png";
 
 export const searchEngineMap: OneTab.EngineInfo[] = [
   {
@@ -72,4 +72,4 @@ export const searchEngineMap: OneTab.EngineInfo[] = [
     bgColor: "rgba(0,0,0,0)",
     target: "https://www.sogou.com/sogou?pid=sogou-site-7985672db979303a&query=%s",
   },
-]
+];
