@@ -6,6 +6,7 @@ export default {
     "entrypoints/**",
     "components/**",
     "./node_modules/@one-tab/web-app/esm/**/*.js",
+    "./node_modules/@pingtou/shadcn-ui/dist/esm/**/*.js",
   ],
   theme: {
     extend: {},
