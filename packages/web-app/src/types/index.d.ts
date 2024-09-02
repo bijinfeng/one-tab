@@ -1,4 +1,7 @@
 declare namespace OneTab {
+  type Theme = "light" | "dark" | "system";
+  type ThemeMode = "light" | "dark";
+
   interface EngineInfo {
     id: string;
     name: string;

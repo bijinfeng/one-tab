@@ -9,6 +9,8 @@ import { Setting as SettingIcon } from "@/icons";
 import React from "react";
 import packageJson from "../../../package.json";
 import { BasicSetting } from "./BasicSetting";
+import { ThemeSetting } from "./ThemeSetting";
+import { WallpaperSetting } from "./WallpaperSetting";
 
 const sidbarMaps = [
   {
@@ -19,10 +21,12 @@ const sidbarMaps = [
   {
     key: "wallpaper",
     title: "壁纸",
+    content: WallpaperSetting,
   },
   {
     key: "themes",
     title: "主题",
+    content: ThemeSetting,
   },
   {
     key: "engines",

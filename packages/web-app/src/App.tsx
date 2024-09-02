@@ -10,21 +10,24 @@ import { Wallpaper } from "./components/Wallpaper";
 import { Widgets } from "./components/Widgets";
 import "./style/iconfont/style.css";
 import "./style/index.css";
+import { ThemeProvider } from "./theme";
 
 function App() {
   const { minimalistMode } = useSettingStore();
 
   return (
-    <TooltipProvider>
-      <div className="fixed left-0 right-0 top-0 bottom-0 select-none overflow-hidden text-[14px]">
-        <Wallpaper />
-        <Search />
-        {minimalistMode && <Widgets />}
-        {!minimalistMode && <SideDock />}
-        <Setting />
-        <Minimalist />
-      </div>
-    </TooltipProvider>
+    <ThemeProvider>
+      <TooltipProvider>
+        <div className="fixed left-0 right-0 top-0 bottom-0 select-none overflow-hidden text-[14px]">
+          <Wallpaper />
+          <Search />
+          {minimalistMode && <Widgets />}
+          {!minimalistMode && <SideDock />}
+          <Setting />
+          <Minimalist />
+        </div>
+      </TooltipProvider>
+    </ThemeProvider>
   );
 }
 

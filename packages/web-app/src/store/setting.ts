@@ -4,7 +4,8 @@ import { createJSONStorage, persist } from "zustand/middleware";
 import { idbStorage } from "@/utils/persist";
 
 export interface SettingStoreState {
-  theme: "light" | "dark";
+  theme: OneTab.Theme;
+
   minimalistMode: boolean; // 是否开启精简模式
   minimalistSwitchBtnStatus: "show" | "auto-hide"; // 精简模式开关按钮状态: 显示/自动隐藏
 
@@ -25,7 +26,7 @@ export interface SettingStoreState {
 export const useSettingStore = create<SettingStoreState>()(
   persist(
     (set) => ({
-      theme: "light",
+      theme: "system",
 
       minimalistMode: false,
       minimalistSwitchBtnStatus: "show",
