@@ -11,7 +11,7 @@ interface EngineItemProps {
 }
 
 export const EngineItem: FC<EngineItemProps> = ({ item, className, onSwitch }) => {
-  const { currentId, setCurrentId } = useSearchStore();
+  const { currentId, setCurrentId, toggleDefaultEngine } = useSearchStore();
 
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: item.id });
 
@@ -29,7 +29,13 @@ export const EngineItem: FC<EngineItemProps> = ({ item, className, onSwitch }) =
     <li ref={setNodeRef} style={style} className={cn("search-drop flex flex-col items-center", className)}>
       <div className="group cursor-pointer icon search-drag relative flex h-[48px] w-[48px] items-center justify-center rounded-[12px] bg-color-white bg-opacity-80 transition-colors hover:bg-opacity-100 dark:bg-opacity-[0.06] dark:hover:bg-opacity-20">
         {currentId !== item.id && (
-          <section className="hi-close cursor-pointer flex items-center justify-center rounded-[50%] bg-color-b4 shadow-close-btn transition-opacity absolute top-[-8px] left-[-8px] h-6 w-6 opacity-0 group-hover:opacity-100">
+          <section
+            className="hi-close cursor-pointer flex items-center justify-center rounded-[50%] bg-color-b4 shadow-close-btn transition-opacity absolute top-[-8px] left-[-8px] h-6 w-6 opacity-0 group-hover:opacity-100"
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleDefaultEngine(item.id, false);
+            }}
+          >
             <i className="iconfont icon-close_icon text-[12px] text-color-t4 transition-[transform,color] duration-300" />
           </section>
         )}

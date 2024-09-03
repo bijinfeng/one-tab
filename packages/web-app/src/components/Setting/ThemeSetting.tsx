@@ -16,7 +16,7 @@ export const ThemeSetting: FC = () => {
       <Block.Content>
         <Block.Item label="跟随系统" control={<Switch checked={isSystem} onCheckedChange={toggleSystemTheme} />} />
         <RadioGroup disabled={isSystem} value={theme} onValueChange={(value) => setTheme(value as OneTab.ThemeMode)}>
-          <div className="flex justify-between mt-5">
+          <div className="flex justify-between">
             <label className={cn("cursor-pointer", { "cursor-not-allowed": isSystem })}>
               <img src={lightPng} className="w-[162px]" />
               <div className="pt-2 flex items-center gap-2 justify-center">
