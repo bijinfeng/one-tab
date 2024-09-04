@@ -53,7 +53,7 @@ export function Search() {
   return (
     <div
       ref={containerRef}
-      className="absolute left-1/2 -translate-x-1/2 top-[12vh] w-[568px] transition-opacity duration-100"
+      className="z-50 absolute left-1/2 -translate-x-1/2 top-[12vh] w-[568px] transition-opacity duration-100"
     >
       <div
         className={cn(

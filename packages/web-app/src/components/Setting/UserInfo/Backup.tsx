@@ -1,10 +1,14 @@
 import { Block } from "@/components/SettingBlock";
+import { events } from "@/events";
 import { Button } from "@pingtou/shadcn-ui";
 
 export const Backup = () => {
   return (
     <div className="px-[70px] py-[40px]">
-      <button className="flex w-full items-center justify-between border-b-[1px] border-color-m2 border-opacity-[0.06] pb-[20px]">
+      <button
+        className="flex w-full items-center justify-between border-b-[1px] border-color-m2 border-opacity-[0.06] pb-[20px]"
+        onClick={() => events.emit("login")}
+      >
         <div className="flex flex-1 items-center">
           <div className="mr-[20px] h-[48px] w-[48px] flex-shrink-0 overflow-hidden rounded-full">
             <i className="iconfont icon-dengdaisousuo text-[48px] text-color-t4 leading-none" />
