@@ -1,11 +1,13 @@
-import { defineBuildConfig } from 'unbuild'
+import { defineBuildConfig } from "unbuild";
 
 export default defineBuildConfig({
-  entries: ['./src/index'],
+  entries: [
+    {
+      builder: "mkdist",
+      input: "./src",
+      outDir: "./dist",
+    },
+  ],
   declaration: true,
   clean: true,
-  rollup: {
-    emitCJS: true,
-    inlineDependencies: true,
-  },
-})
+});

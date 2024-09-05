@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-import './dist/cli/index.mjs';
+/* eslint-disable antfu/no-import-dist */
+import "./dist/cli/index.mjs"

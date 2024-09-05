@@ -1,16 +1,16 @@
-import type { RsbuildConfig } from "@rsbuild/core"
+import type { RsbuildConfig } from "@rsbuild/core";
 
-export type Awaitable<T> = T | PromiseLike<T>
-export type Nullable<T> = T | null | undefined
-export type Arrayable<T> = T | Array<T>
-export type ArgumentsType<T> = T extends (...args: infer U) => any ? U : never
+export type Awaitable<T> = T | PromiseLike<T>;
+export type Nullable<T> = T | null | undefined;
+export type Arrayable<T> = T | Array<T>;
+export type ArgumentsType<T> = T extends (...args: infer U) => any ? U : never;
 
 export type MutableArray<T extends readonly any[]> = {
   -readonly [k in keyof T]: T[k];
-}
+};
 
 export interface Constructable {
-  new(...args: any[]): any
+  new (...args: any[]): any;
 }
 
 export interface InlineConfig {
@@ -21,11 +21,11 @@ export interface InlineConfig {
    * @default process.cwd()
    */
   root?: string;
-  
+
   plugins?: PluginOption[];
   /**
-    * Config effecting dev mode only.
-    */
+   * Config effecting dev mode only.
+   */
   dev?: {
     server?: {
       /**
@@ -53,16 +53,16 @@ export interface InlineConfig {
      */
     reloadCommand?: string | false;
     /**
-    * Add additional paths to the `.wxt/tsconfig.json`. Use this instead of overwriting the `paths`
-    * in the root `tsconfig.json` if you want to add new paths.
-    *
-    * The key is the import alias and the value is either a relative path to the root directory or an absolute path.
-    *
-    * @example
-    * {
-    *   "testing": "src/utils/testing.ts"
-    * }
-    */
+     * Add additional paths to the `.wxt/tsconfig.json`. Use this instead of overwriting the `paths`
+     * in the root `tsconfig.json` if you want to add new paths.
+     *
+     * The key is the import alias and the value is either a relative path to the root directory or an absolute path.
+     *
+     * @example
+     * {
+     *   "testing": "src/utils/testing.ts"
+     * }
+     */
     alias?: Record<string, string>;
     /**
      * Set to `true` to show debug logs. Overriden by the command line `--debug` option.
@@ -78,7 +78,7 @@ export interface InlineConfig {
   };
 }
 
-export interface UserConfig extends InlineConfig { }
+export interface UserConfig extends InlineConfig {}
 
 export interface Plugin {
   name?: string;
@@ -89,6 +89,6 @@ export interface Plugin {
   rsbuildConfig?: () => RsbuildConfig | Promise<RsbuildConfig>;
 }
 
-type Thenable<T> = T | Promise<T>
-type FalsyPlugin = false | null | undefined
-export type PluginOption = Thenable<Plugin | FalsyPlugin | PluginOption[]>
+type Thenable<T> = T | Promise<T>;
+type FalsyPlugin = false | null | undefined;
+export type PluginOption = Thenable<Plugin | FalsyPlugin>;
