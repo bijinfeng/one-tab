@@ -3,29 +3,35 @@
   "type": "module",
   "version": "1.0.0",
   "description": "",
+  "author": "bijinfeng",
+  "license": "ISC",
+  "keywords": [],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "bin": {
     "onetab": "./onetab.mjs"
   },
-  "files": ["dist", "onetab.mjs"],
+  "files": [
+    "dist",
+    "onetab.mjs"
+  ],
   "engines": {
     "node": "^18.0.0 || >=20.0.0"
   },
   "scripts": {
     "build": "unbuild",
-    "dev": "unbuild --stub"
+    "dev": "unbuild --stub",
+    "start": "esno src/cli/index.ts"
   },
-  "keywords": [],
-  "author": "bijinfeng",
-  "license": "ISC",
+  "dependencies": {
+    "pathe": "^1.1.2",
+    "vite": "^5.4.1"
+  },
   "devDependencies": {
     "@types/node": "^22.5.3",
     "cac": "^6.7.14",
+    "esno": "^4.7.0",
     "unbuild": "^2.0.0"
-  },
-  "dependencies": {
-    "pathe": "^1.1.2"
   }
 }
