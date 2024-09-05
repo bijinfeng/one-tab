@@ -2,7 +2,9 @@ import { defineConfig } from "@rsbuild/core";
 import { pluginImageCompress } from "@rsbuild/plugin-image-compress";
 import { pluginReact } from "@rsbuild/plugin-react";
 
-export default defineConfig(() => {
+export default defineConfig(({ env }) => {
+  const isDev = env === "development";
+
   return {
     plugins: [pluginReact(), pluginImageCompress()],
     html: {
@@ -14,7 +16,7 @@ export default defineConfig(() => {
       },
     },
     output: {
-      assetPrefix: "/<REPO_NAME>/",
+      assetPrefix: isDev ? "/" : "/one-tab/",
     },
   };
 });
