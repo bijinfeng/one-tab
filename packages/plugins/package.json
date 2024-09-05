@@ -9,7 +9,8 @@
   "keywords": [],
   "author": "bijinfeng",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@onetab/module-react": "workspace:*",
     "onetab": "workspace:*"
   }
 }

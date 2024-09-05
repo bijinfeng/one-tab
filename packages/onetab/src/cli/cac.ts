@@ -1,6 +1,7 @@
 import cac from "cac";
 import { version } from "../../package.json";
-import type { CliOptions } from "./cli-api";
+import { createServer } from "../core/create-server";
+import type { CliOptions } from "./cli-config";
 
 /**
  * host may be a number (like 0), should convert to string
@@ -35,8 +36,10 @@ export function createCLI() {
     .option("--open [path]", `[boolean | string] open browser on startup`)
     .option("--cors", `[boolean] enable CORS`)
     .option("--strictPort", `[boolean] exit if specified port is already in use`)
-    .option("--force", `[boolean] force the optimizer to ignore the cache and re-bundle`)
-    .action(async (root: string, options: CliOptions) => {});
+    .action(async (root: string, options: CliOptions) => {
+      // console.log(11, root, options);
+      createServer()
+    });
 
   return cli;
 }
