@@ -139,3 +139,42 @@
 .h-sidebar {
   height: clamp(min(480px, 70%), 636px, 70%);
 }
+
+.icon-home-large {
+  --icon-size: 88px;
+  --icon-home-radius: 24px;
+}
+
+.icon-home-medium {
+  --icon-size: 72px;
+  --icon-home-radius: 20px;
+}
+
+.icon-home-small {
+  --icon-size: 60px;
+  --icon-home-radius: 16px;
+}
+
+.icon-home {
+  filter: drop-shadow(rgba(0, 0, 0, 0.05) 0 4px 12px);
+  font-size: 38px;
+  height: var(--icon-size);
+  transition: all 0.2s;
+  width: var(--icon-size);
+}
+
+.icon-home,
+.icon-widget {
+  border-radius: var(--icon-home-radius);
+}
+
+.icon-box {
+  padding: var(--icon-padding-y) var(--icon-padding-x);
+}
+
+.home-icon {
+  --icon-padding-x: 30px;
+  --icon-gap-x: 60px;
+  --icon-padding-y: 15px;
+  --icon-width-full: calc(var(--icon-size) + var(--icon-gap-x));
+}

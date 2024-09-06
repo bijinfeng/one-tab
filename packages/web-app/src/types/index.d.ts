@@ -1,6 +1,7 @@
 declare namespace OneTab {
   type Theme = "light" | "dark" | "system";
   type ThemeMode = "light" | "dark";
+  type WidgetSize = "large" | "small" | "medium" | "mini";
 
   interface EngineInfo {
     id: string;
@@ -29,4 +30,24 @@ declare namespace OneTab {
     hitokoto: string;
     from_who: string;
   }
+
+  interface WidgetInfo {
+    type: "widget";
+    id: string;
+    name: string;
+    widgetSize: WidgetSize;
+    widgetName: string;
+  }
+
+  interface SiteInfo {
+    type: "site";
+    id: string;
+    name: string;
+    target: string;
+    bgColor: string;
+    bgImage: string;
+    bgType: string;
+  }
+
+  type App = WidgetInfo | SiteInfo;
 }
