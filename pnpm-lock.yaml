@@ -13,10 +13,10 @@ importers:
         version: 2.6.3(@vue/compiler-sfc@3.4.38)(eslint-plugin-format@0.1.0(eslint@8.56.0))(eslint-plugin-react-hooks@4.6.0(eslint@8.56.0))(eslint-plugin-react-refresh@0.4.5(eslint@8.56.0))(eslint-plugin-react@7.33.2(eslint@8.56.0))(eslint@8.56.0)(typescript@5.5.4)
       '@commitlint/cli':
         specifier: ^18.6.0
-        version: 18.6.0(@types/node@22.5.3)(typescript@5.5.4)
+        version: 18.6.0(@types/node@22.5.4)(typescript@5.5.4)
       commitizen:
         specifier: ^4.3.0
-        version: 4.3.0(@types/node@22.5.3)(typescript@5.5.4)
+        version: 4.3.0(@types/node@22.5.4)(typescript@5.5.4)
       cz-git:
         specifier: ^1.8.0
         version: 1.8.0
@@ -84,7 +84,7 @@ importers:
         version: 18.3.0
       '@wxt-dev/module-react':
         specifier: ^1.1.0
-        version: 1.1.0(vite@5.4.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6))(wxt@0.19.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6))
+        version: 1.1.0(vite@5.4.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6))(wxt@0.19.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6))
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.41)
@@ -99,7 +99,23 @@ importers:
         version: 5.5.4
       wxt:
         specifier: ^0.19.1
-        version: 0.19.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6)
+        version: 0.19.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6)
+
+  packages/create-onetab:
+    dependencies:
+      create-rstack:
+        specifier: ^1.0.1
+        version: 1.0.1
+    devDependencies:
+      '@rslib/core':
+        specifier: ^0.0.5
+        version: 0.0.5(@microsoft/api-extractor@7.39.1(@types/node@22.5.4))(typescript@5.5.4)
+      '@types/node':
+        specifier: ^22.5.4
+        version: 22.5.4
+      typescript:
+        specifier: ^5.5.4
+        version: 5.5.4
 
   packages/onetab:
     dependencies:
@@ -237,7 +253,7 @@ importers:
         version: 10.4.20(postcss@8.4.41)
       father:
         specifier: ^4.5.0
-        version: 4.5.0(@babel/core@7.25.2)(@types/node@22.5.3)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(type-fest@3.13.1)(webpack@5.94.0)
+        version: 4.5.0(@babel/core@7.25.2)(@types/node@22.5.4)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(type-fest@3.13.1)(webpack@5.94.0)
       globals:
         specifier: ^15.9.0
         version: 15.9.0
@@ -2567,6 +2583,19 @@ packages:
     peerDependencies:
       '@rsbuild/core': ^1.0.1-rc.0
 
+  '@rslib/core@0.0.5':
+    resolution: {integrity: sha512-tVI+tgVQiIxtFztOng5l+XoO1Yd1K21ef6k6x0lmGAUfinDPgKX2s9tn93c6/dsgmu2h9e1eXA9ekQMLrRzREQ==}
+    engines: {node: '>=16.0.0'}
+    hasBin: true
+    peerDependencies:
+      '@microsoft/api-extractor': ^7
+      typescript: ^5
+    peerDependenciesMeta:
+      '@microsoft/api-extractor':
+        optional: true
+      typescript:
+        optional: true
+
   '@rspack/binding-darwin-arm64@1.0.0':
     resolution: {integrity: sha512-ZHQk9YK+swlTG48kJTgzFUW9T26KjhLXRok5la7t2AMoiuHyhGHHgC5iQfPJLZ62XzcJ/rfqs2rwakl97151jQ==}
     cpu: [arm64]
@@ -3092,6 +3121,9 @@ packages:
 
   '@types/node@22.5.3':
     resolution: {integrity: sha512-njripolh85IA9SQGTAqbmnNZTdxv7X/4OYGPz8tgy5JDr8MP+uDBa921GpYEoDDnwm0Hmn5ZPeJgiiSTPoOzkQ==}
+
+  '@types/node@22.5.4':
+    resolution: {integrity: sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -4106,6 +4138,9 @@ packages:
 
   create-hmac@1.1.7:
     resolution: {integrity: sha512-MJG9liiZ+ogc4TzUwuvbER1JRdgvUFSB5+VR/g5h82fGaIRWMWddtKBHi7/sVhfjQZ6SehlyhvQYrcYkaUIpLg==}
+
+  create-rstack@1.0.1:
+    resolution: {integrity: sha512-zx+ynJiBJc8BSrtOpDKeFv+3DJm2MOajrMoxpsHHji3vsC+BAflQo4XTcTZ+UMZrI6FKd3sk4WCtlB0bYEzONg==}
 
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -7086,6 +7121,9 @@ packages:
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
 
+  picocolors@1.1.0:
+    resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
+
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -8001,6 +8039,19 @@ packages:
     resolution: {integrity: sha512-vo+S/lfA2lMS7rZ2Qoubi6I5hwZwzXeUIctILZLbHI+laNtvhhOIon2S1JksA5UEDQ7l3vberd0fxK44lTYjbQ==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
+
+  rsbuild-plugin-dts@0.0.5:
+    resolution: {integrity: sha512-YZvlc2LxmX+63DJd/HGlYyz3Pl6vBQxAWMax+Qk1gWUDZLRmOFZdo2OPmjW/xID9Jp0GeSdq95AzATH/7pAAyA==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      '@microsoft/api-extractor': ^7
+      '@rsbuild/core': 1.x
+      typescript: ^5
+    peerDependenciesMeta:
+      '@microsoft/api-extractor':
+        optional: true
+      typescript:
+        optional: true
 
   rslog@1.2.2:
     resolution: {integrity: sha512-tZP8KjrI1nz6qOYCrFxAV7cfmfS2GV94jotU2zOmF/6ByO1zNvGR6/+0inylpjqyBjAdnnutTUW0m4th06bSTw==}
@@ -9501,11 +9552,11 @@ snapshots:
 
   '@bufbuild/protobuf@1.10.0': {}
 
-  '@commitlint/cli@18.6.0(@types/node@22.5.3)(typescript@5.5.4)':
+  '@commitlint/cli@18.6.0(@types/node@22.5.4)(typescript@5.5.4)':
     dependencies:
       '@commitlint/format': 18.6.1
       '@commitlint/lint': 18.6.1
-      '@commitlint/load': 18.6.1(@types/node@22.5.3)(typescript@5.5.4)
+      '@commitlint/load': 18.6.1(@types/node@22.5.4)(typescript@5.5.4)
       '@commitlint/read': 18.6.1
       '@commitlint/types': 18.6.1
       execa: 5.1.1
@@ -9559,7 +9610,7 @@ snapshots:
       '@commitlint/rules': 18.6.1
       '@commitlint/types': 18.6.1
 
-  '@commitlint/load@18.6.1(@types/node@22.5.3)(typescript@5.5.4)':
+  '@commitlint/load@18.6.1(@types/node@22.5.4)(typescript@5.5.4)':
     dependencies:
       '@commitlint/config-validator': 18.6.1
       '@commitlint/execute-rule': 18.6.1
@@ -9567,7 +9618,7 @@ snapshots:
       '@commitlint/types': 18.6.1
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.5.4)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@22.5.3)(cosmiconfig@8.3.6(typescript@5.5.4))(typescript@5.5.4)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@22.5.4)(cosmiconfig@8.3.6(typescript@5.5.4))(typescript@5.5.4)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -9576,7 +9627,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@commitlint/load@19.4.0(@types/node@22.5.3)(typescript@5.5.4)':
+  '@commitlint/load@19.4.0(@types/node@22.5.4)(typescript@5.5.4)':
     dependencies:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/execute-rule': 19.0.0
@@ -9584,7 +9635,7 @@ snapshots:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.5.4)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@22.5.3)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@22.5.4)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -10291,20 +10342,20 @@ snapshots:
       '@types/react': 18.3.3
       react: 18.3.1
 
-  '@microsoft/api-extractor-model@7.28.4(@types/node@22.5.3)':
+  '@microsoft/api-extractor-model@7.28.4(@types/node@22.5.4)':
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.63.0(@types/node@22.5.3)
+      '@rushstack/node-core-library': 3.63.0(@types/node@22.5.4)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.39.1(@types/node@22.5.3)':
+  '@microsoft/api-extractor@7.39.1(@types/node@22.5.4)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.28.4(@types/node@22.5.3)
+      '@microsoft/api-extractor-model': 7.28.4(@types/node@22.5.4)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.63.0(@types/node@22.5.3)
+      '@rushstack/node-core-library': 3.63.0(@types/node@22.5.4)
       '@rushstack/rig-package': 0.5.1
       '@rushstack/ts-command-line': 4.17.1
       colors: 1.2.5
@@ -11446,6 +11497,14 @@ snapshots:
       reduce-configs: 1.0.0
       sass-embedded: 1.78.0
 
+  '@rslib/core@0.0.5(@microsoft/api-extractor@7.39.1(@types/node@22.5.4))(typescript@5.5.4)':
+    dependencies:
+      '@rsbuild/core': 1.0.1-rc.4
+      rsbuild-plugin-dts: 0.0.5(@microsoft/api-extractor@7.39.1(@types/node@22.5.4))(@rsbuild/core@1.0.1-rc.4)(typescript@5.5.4)
+    optionalDependencies:
+      '@microsoft/api-extractor': 7.39.1(@types/node@22.5.4)
+      typescript: 5.5.4
+
   '@rspack/binding-darwin-arm64@1.0.0':
     optional: true
 
@@ -11697,7 +11756,7 @@ snapshots:
       react-transition-group: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       rspack-plugin-virtual-module: 0.1.12
 
-  '@rushstack/node-core-library@3.63.0(@types/node@22.5.3)':
+  '@rushstack/node-core-library@3.63.0(@types/node@22.5.4)':
     dependencies:
       colors: 1.2.5
       fs-extra: 7.0.1
@@ -11707,7 +11766,7 @@ snapshots:
       semver: 7.5.4
       z-schema: 5.0.5
     optionalDependencies:
-      '@types/node': 22.5.3
+      '@types/node': 22.5.4
 
   '@rushstack/rig-package@0.5.1':
     dependencies:
@@ -12068,6 +12127,10 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
+  '@types/node@22.5.4':
+    dependencies:
+      undici-types: 6.19.8
+
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/parse-json@4.0.2': {}
@@ -12341,14 +12404,14 @@ snapshots:
 
   '@vercel/ncc@0.33.3': {}
 
-  '@vitejs/plugin-react@4.3.1(vite@5.4.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6))':
+  '@vitejs/plugin-react@4.3.1(vite@5.4.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.25.2)
       '@babel/plugin-transform-react-jsx-source': 7.24.7(@babel/core@7.25.2)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.4.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6)
+      vite: 5.4.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6)
     transitivePeerDependencies:
       - supports-color
 
@@ -12470,10 +12533,10 @@ snapshots:
 
   '@webext-core/match-patterns@1.0.3': {}
 
-  '@wxt-dev/module-react@1.1.0(vite@5.4.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6))(wxt@0.19.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6))':
+  '@wxt-dev/module-react@1.1.0(vite@5.4.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6))(wxt@0.19.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6))':
     dependencies:
-      '@vitejs/plugin-react': 4.3.1(vite@5.4.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6))
-      wxt: 0.19.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6)
+      '@vitejs/plugin-react': 4.3.1(vite@5.4.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6))
+      wxt: 0.19.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6)
     transitivePeerDependencies:
       - supports-color
       - vite
@@ -13164,10 +13227,10 @@ snapshots:
 
   comment-parser@1.4.1: {}
 
-  commitizen@4.3.0(@types/node@22.5.3)(typescript@5.5.4):
+  commitizen@4.3.0(@types/node@22.5.4)(typescript@5.5.4):
     dependencies:
       cachedir: 2.3.0
-      cz-conventional-changelog: 3.3.0(@types/node@22.5.3)(typescript@5.5.4)
+      cz-conventional-changelog: 3.3.0(@types/node@22.5.4)(typescript@5.5.4)
       dedent: 0.7.0
       detect-indent: 6.1.0
       find-node-modules: 2.1.3
@@ -13263,16 +13326,16 @@ snapshots:
       object-assign: 4.1.1
       vary: 1.1.2
 
-  cosmiconfig-typescript-loader@5.0.0(@types/node@22.5.3)(cosmiconfig@8.3.6(typescript@5.5.4))(typescript@5.5.4):
+  cosmiconfig-typescript-loader@5.0.0(@types/node@22.5.4)(cosmiconfig@8.3.6(typescript@5.5.4))(typescript@5.5.4):
     dependencies:
-      '@types/node': 22.5.3
+      '@types/node': 22.5.4
       cosmiconfig: 8.3.6(typescript@5.5.4)
       jiti: 1.21.6
       typescript: 5.5.4
 
-  cosmiconfig-typescript-loader@5.0.0(@types/node@22.5.3)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4):
+  cosmiconfig-typescript-loader@5.0.0(@types/node@22.5.4)(cosmiconfig@9.0.0(typescript@5.5.4))(typescript@5.5.4):
     dependencies:
-      '@types/node': 22.5.3
+      '@types/node': 22.5.4
       cosmiconfig: 9.0.0(typescript@5.5.4)
       jiti: 1.21.6
       typescript: 5.5.4
@@ -13326,6 +13389,8 @@ snapshots:
       ripemd160: 2.0.2
       safe-buffer: 5.2.1
       sha.js: 2.4.11
+
+  create-rstack@1.0.1: {}
 
   cross-spawn@7.0.3:
     dependencies:
@@ -13482,16 +13547,16 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  cz-conventional-changelog@3.3.0(@types/node@22.5.3)(typescript@5.5.4):
+  cz-conventional-changelog@3.3.0(@types/node@22.5.4)(typescript@5.5.4):
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.3.0(@types/node@22.5.3)(typescript@5.5.4)
+      commitizen: 4.3.0(@types/node@22.5.4)(typescript@5.5.4)
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 19.4.0(@types/node@22.5.3)(typescript@5.5.4)
+      '@commitlint/load': 19.4.0(@types/node@22.5.4)(typescript@5.5.4)
     transitivePeerDependencies:
       - '@types/node'
       - typescript
@@ -14540,9 +14605,9 @@ snapshots:
     dependencies:
       reusify: 1.0.4
 
-  father@4.5.0(@babel/core@7.25.2)(@types/node@22.5.3)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(type-fest@3.13.1)(webpack@5.94.0):
+  father@4.5.0(@babel/core@7.25.2)(@types/node@22.5.4)(styled-components@6.1.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(type-fest@3.13.1)(webpack@5.94.0):
     dependencies:
-      '@microsoft/api-extractor': 7.39.1(@types/node@22.5.3)
+      '@microsoft/api-extractor': 7.39.1(@types/node@22.5.4)
       '@umijs/babel-preset-umi': 4.3.17
       '@umijs/bundler-utils': 4.3.17
       '@umijs/bundler-webpack': 4.3.17(type-fest@3.13.1)(typescript@5.3.3)(webpack@5.94.0)
@@ -15632,7 +15697,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.5.3
+      '@types/node': 22.5.4
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -17096,6 +17161,8 @@ snapshots:
 
   picocolors@1.0.1: {}
 
+  picocolors@1.1.0: {}
+
   picomatch@2.3.1: {}
 
   picomatch@4.0.2: {}
@@ -17548,7 +17615,7 @@ snapshots:
   postcss@8.4.38:
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.1
+      picocolors: 1.1.0
       source-map-js: 1.2.0
 
   postcss@8.4.41:
@@ -18090,6 +18157,16 @@ snapshots:
       '@rollup/rollup-win32-ia32-msvc': 4.21.0
       '@rollup/rollup-win32-x64-msvc': 4.21.0
       fsevents: 2.3.3
+
+  rsbuild-plugin-dts@0.0.5(@microsoft/api-extractor@7.39.1(@types/node@22.5.4))(@rsbuild/core@1.0.1-rc.4)(typescript@5.5.4):
+    dependencies:
+      '@rsbuild/core': 1.0.1-rc.4
+      fast-glob: 3.3.2
+      magic-string: 0.30.11
+      picocolors: 1.1.0
+    optionalDependencies:
+      '@microsoft/api-extractor': 7.39.1(@types/node@22.5.4)
+      typescript: 5.5.4
 
   rslog@1.2.2: {}
 
@@ -19165,13 +19242,13 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite-node@2.0.5(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6):
+  vite-node@2.0.5(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6):
     dependencies:
       cac: 6.7.14
       debug: 4.3.6
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.4.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6)
+      vite: 5.4.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -19183,13 +19260,13 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.4.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6):
+  vite@5.4.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.41
       rollup: 4.21.0
     optionalDependencies:
-      '@types/node': 22.5.3
+      '@types/node': 22.5.4
       fsevents: 2.3.3
       less: 4.2.0
       lightningcss: 1.22.1
@@ -19390,7 +19467,7 @@ snapshots:
 
   ws@8.18.0: {}
 
-  wxt@0.19.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6):
+  wxt@0.19.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(rollup@4.21.0)(sass-embedded@1.78.0)(terser@5.31.6):
     dependencies:
       '@aklinker1/rollup-plugin-visualizer': 5.12.0(rollup@4.21.0)
       '@types/webextension-polyfill': 0.10.7
@@ -19428,8 +19505,8 @@ snapshots:
       prompts: 2.4.2
       publish-browser-extension: 2.2.1
       unimport: 3.11.1(rollup@4.21.0)
-      vite: 5.4.1(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6)
-      vite-node: 2.0.5(@types/node@22.5.3)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6)
+      vite: 5.4.1(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6)
+      vite-node: 2.0.5(@types/node@22.5.4)(less@4.2.0)(lightningcss@1.22.1)(sass-embedded@1.78.0)(terser@5.31.6)
       web-ext-run: 0.2.1
       webextension-polyfill: 0.12.0
     transitivePeerDependencies:
