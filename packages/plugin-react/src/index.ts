@@ -1,6 +1,6 @@
 import { pluginReact } from "@rsbuild/plugin-react";
 import type { Plugin } from "onetab";
-import { CLIENT_ENTRY, CLIENT_TEMPLATE } from "./constants";
+import { CLIENT_ENTRY, DEFAULT_FAVICON, DEFAULT_TITLE } from "./constants";
 
 export default function reactPlugin(): Plugin {
   return {
@@ -9,7 +9,9 @@ export default function reactPlugin(): Plugin {
     rsbuildConfig: () => ({
       plugins: [pluginReact()],
       html: {
-        template: CLIENT_TEMPLATE,
+        mountId: "root",
+        title: DEFAULT_TITLE,
+        favicon: DEFAULT_FAVICON,
       },
       source: {
         entry: {

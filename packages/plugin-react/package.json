@@ -1,5 +1,5 @@
 {
-  "name": "@onetab/module-react",
+  "name": "@onetab/plugin-react",
   "version": "1.0.0",
   "description": "",
   "author": "bijinfeng",
@@ -8,6 +8,10 @@
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "runtime"
+  ],
   "scripts": {
     "build": "unbuild",
     "dev": "unbuild --stub",
