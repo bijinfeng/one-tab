@@ -9,6 +9,7 @@ import {
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { FC, useCallback, useMemo, useState } from "react";
+import { AddButton } from "./AddButton";
 import { SortableItem } from "./SortableItem";
 
 interface ISortableProps {
@@ -41,6 +42,10 @@ export const Sortable: FC<ISortableProps> = (props) => {
             <SortableItem key={item.id} item={item} />
           ))}
         </SortableContext>
+
+        <div className="icon-box">
+          <AddButton />
+        </div>
       </div>
     </DndContext>
   );

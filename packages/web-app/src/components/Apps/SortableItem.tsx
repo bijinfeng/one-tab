@@ -43,7 +43,7 @@ const getWidgetHeight = (item: OneTab.WidgetInfo): string => {
 const renderWidget = (item: OneTab.WidgetInfo) => {
   return (
     <div className="icon-widget" style={{ height: getWidgetHeight(item) }}>
-      <Skeleton className="w-full h-full bg-red-300" />
+      <Skeleton className="w-full h-full bg-color-m1 bg-opacity-60" />
     </div>
   );
 };
@@ -51,7 +51,7 @@ const renderWidget = (item: OneTab.WidgetInfo) => {
 const renderSite = () => {
   return (
     <div className="icon-home">
-      <Skeleton className="w-full h-full bg-red-300" />
+      <Skeleton className="w-full h-full bg-color-m1 bg-opacity-60" />
     </div>
   );
 };
