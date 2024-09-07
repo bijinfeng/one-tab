@@ -1,6 +1,14 @@
-import { DndContext } from "@dnd-kit/core";
-import { SortableContext } from "@dnd-kit/sortable";
-import { FC, useMemo } from "react";
+import {
+  closestCorners,
+  DndContext,
+  DragOverEvent,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import { arrayMove, SortableContext } from "@dnd-kit/sortable";
+import { FC, useCallback, useMemo, useState } from "react";
 import { SortableItem } from "./SortableItem";
 
 interface ISortableProps {
@@ -8,12 +16,25 @@ interface ISortableProps {
 }
 
 export const Sortable: FC<ISortableProps> = (props) => {
-  const { items } = props;
-
+  const [items, setItems] = useState(props.items);
+  const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
   const idItems = useMemo(() => items.map((item) => item.id), [items]);
 
+  const handleDragOver = useCallback((event: DragOverEvent) => {
+    const { active, over } = event;
+
+    if (active.id !== over?.id) {
+      setItems((items) => {
+        const oldIndex = items.findIndex((i) => i.id === active.id);
+        const newIndex = items.findIndex((i) => i.id === over?.id);
+
+        return arrayMove(items, oldIndex, newIndex);
+      });
+    }
+  }, []);
+
   return (
-    <DndContext>
+    <DndContext sensors={sensors} collisionDetection={closestCorners} onDragOver={handleDragOver}>
       <div className="grid grid-flow-row-dense grid-cols-[repeat(auto-fill,var(--icon-width-full))]">
         <SortableContext items={idItems}>
           {items.map((item) => (
