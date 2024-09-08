@@ -1,3 +1,5 @@
+/// <reference types="@rsbuild/core/types" />
+
 declare namespace OneTab {
   type Theme = "light" | "dark" | "system";
   type ThemeMode = "light" | "dark";

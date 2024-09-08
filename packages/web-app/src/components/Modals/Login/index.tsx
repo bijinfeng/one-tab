@@ -11,7 +11,7 @@ interface FormValue {
   password: string;
 }
 
-export const LoginDialog = () => {
+export const LoginModal = () => {
   const [open, setOpen] = useState(false);
   const formRef = useRef<FormInstance<FormValue>>(null);
 

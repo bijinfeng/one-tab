@@ -3,8 +3,8 @@ import "@icon-park/react/styles/index.css";
 import { TooltipProvider } from "@pingtou/shadcn-ui";
 import "@pingtou/shadcn-ui/dist/esm/index.css";
 import { Apps } from "./components/Apps";
-import { LoginDialog } from "./components/Login";
 import { Minimalist } from "./components/Minimalist";
+import { Modals } from "./components/Modals";
 import { Search } from "./components/Search";
 import { Setting } from "./components/Setting";
 import { SideDock } from "./components/SideDock";
@@ -25,16 +25,15 @@ function App() {
           {minimalistMode && <Widgets />}
           {!minimalistMode && (
             <>
-              <SideDock />
               <Apps />
+              <SideDock />
             </>
           )}
           <Search />
           <Setting />
           <Minimalist />
         </div>
-        {/* dialog */}
-        <LoginDialog />
+        <Modals />
       </TooltipProvider>
     </ThemeProvider>
   );
