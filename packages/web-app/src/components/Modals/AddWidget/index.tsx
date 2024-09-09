@@ -12,7 +12,7 @@ export const AddWidgetModal: FC = () => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-[400px] overflow-hidden h-[551px] bg-color-b3 px-[50px] py-[33px]"></DialogContent>
+      <DialogContent className="w-[1024px] max-w-[calc(100vw-40px)] overflow-hidden h-[640px] max-h-[calc(100vh-40px)] bg-color-m1 bg-opacity-70 backdrop-blur-[40px] rounded-[12px]"></DialogContent>
     </Dialog>
   );
 };

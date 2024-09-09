@@ -66,7 +66,7 @@ export const SortableItem: FC<PropsWithChildren<ISortableItemProps>> = ({ item }
   };
 
   return (
-    <div key={item.id} ref={setNodeRef} style={style} className="icon-box">
+    <div key={item.id} ref={setNodeRef} style={style} className="icon-box" onContextMenu={(e) => e.stopPropagation()}>
       <div {...listeners} {...attributes} className="cursor-pointer relative">
         {item.type === "site" ? renderSite() : renderWidget(item)}
       </div>

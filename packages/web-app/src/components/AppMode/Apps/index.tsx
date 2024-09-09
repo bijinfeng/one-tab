@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { Sortable } from "./Sortable";
 
 const mockData: OneTab.App[] = [
@@ -47,12 +48,10 @@ const mockData: OneTab.App[] = [
   },
 ];
 
-export const Apps = () => {
+export const Apps = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <div className="home-icon absolute h-full w-full">
-      <div className="pt-[25vh] mx-auto w-[85%]">
-        <Sortable items={mockData} />
-      </div>
+    <div ref={ref} className="pt-[25vh] mx-auto w-[85%]">
+      <Sortable items={mockData} />
     </div>
   );
-};
+});

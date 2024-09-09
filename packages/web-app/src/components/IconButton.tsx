@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { forwardRef, PropsWithChildren } from "react";
 
 const iconButtonVariants = cva(
-  "icon-box flex cursor-pointer items-center justify-center rounded-[8px] transition-all bg-opacity-0 opacity-70 hover:opacity-100",
+  "flex cursor-pointer items-center justify-center rounded-[8px] transition-all bg-opacity-0 opacity-70 hover:opacity-100",
   {
     variants: {
       size: {

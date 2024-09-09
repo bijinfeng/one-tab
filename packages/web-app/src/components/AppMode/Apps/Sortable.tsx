@@ -43,7 +43,7 @@ export const Sortable: FC<ISortableProps> = (props) => {
           ))}
         </SortableContext>
 
-        <div className="icon-box">
+        <div className="icon-box" onContextMenu={(e) => e.stopPropagation()}>
           <AddButton />
         </div>
       </div>

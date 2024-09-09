@@ -24,6 +24,7 @@ export function SideDock() {
   return (
     <div
       className={cn("group h-sidebar absolute top-1/2 -translate-y-1/2", { "pl-3": isLeft, "right-0 pr-3": isRight })}
+      onContextMenu={(e) => e.stopPropagation()}
     >
       <div
         ref={containerRef}
