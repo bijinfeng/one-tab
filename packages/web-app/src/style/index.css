@@ -178,3 +178,9 @@
   --icon-padding-y: 15px;
   --icon-width-full: calc(var(--icon-size) + var(--icon-gap-x));
 }
+
+.hi-scroll {
+  overflow: auto;
+  scrollbar-color: rgb(var(--color-t1) / 0.2) #0000;
+  scrollbar-width: thin;
+}
