@@ -15,4 +15,5 @@ export default defineConfig({
     socialLinks: [{ icon: "github", mode: "link", content: "https://github.com/web-infra-dev/rspress" }],
   },
   globalStyles: path.join(__dirname, 'src/index.css'),
+  globalUIComponents: [path.join(__dirname, 'src/ui/config-provider.tsx')],
 });

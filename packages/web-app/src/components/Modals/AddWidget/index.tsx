@@ -1,6 +1,7 @@
 import { WindowControl } from "@/components/WindowControl";
 import { events } from "@/events";
-import { Dialog, DialogContent, Select, SelectTrigger, SelectValue } from "@pingtou/shadcn-ui";
+import { Select } from "@onetab/ui";
+import { Dialog, DialogContent } from "@pingtou/shadcn-ui";
 import { useMount } from "ahooks";
 import { FC, useState } from "react";
 
@@ -63,11 +64,7 @@ export const AddWidgetModal: FC = () => {
           <i className="ml-[8px] mr-[20px] inline-block h-[20px] w-[1px] bg-color-m2/[.12]" />
           <div className="category flex items-center text-color-t2">
             <span>添加到：</span>
-            <Select>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select a fruit" />
-              </SelectTrigger>
-            </Select>
+            <Select className="w-[180px]" placeholder="Select a fruit" />
           </div>
         </div>
 
