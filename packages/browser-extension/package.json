@@ -16,7 +16,7 @@
     "postinstall": "wxt prepare"
   },
   "dependencies": {
-    "@one-tab/web-app": "workspace:*",
+    "@onetab/web-app": "workspace:*",
     "@pingtou/shadcn-ui": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
