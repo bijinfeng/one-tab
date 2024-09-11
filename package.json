@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preinstall": "npx -y only-allow pnpm",
-    "build:web": "pnpm run --filter @one-tab/web-app build"
+    "build:web": "pnpm run --filter @onetab/web-app build"
   },
   "config": {
     "commitizen": {
