@@ -1,0 +1,46 @@
+{
+  "name": "@onetab/ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.mjs",
+  "types": "dist/esm/index.d.mts",
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rspress dev",
+    "build:doc": "rspress build",
+    "preview": "rspress preview"
+  },
+  "keywords": [],
+  "author": "bijinfeng",
+  "license": "ISC",
+  "devDependencies": {
+    "@rsbuild/plugin-react": "1.0.1-rc.4",
+    "@rslib/core": "^0.0.5",
+    "@types/react": "^18.3.3",
+    "@types/upng-js": "^2.1.5",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "postcss-loader": "^8.1.1",
+    "react": "^18.3.1",
+    "rspress": "^1.28.0",
+    "tailwindcss": "^3.4.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.0",
+    "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7",
+    "upng-js": "^2.1.0"
+  }
+}
