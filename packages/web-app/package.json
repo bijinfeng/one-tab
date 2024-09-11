@@ -18,6 +18,7 @@
     "@icon-park/react": "^1.4.2",
     "@pingtou/axios-jsonp": "^0.0.1",
     "@pingtou/shadcn-ui": "^1.0.2",
+    "@onetab/ui": "workspace:*",
     "ahooks": "^3.8.1",
     "axios": "^1.7.4",
     "class-variance-authority": "^0.7.0",

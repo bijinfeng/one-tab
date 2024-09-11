@@ -1,3 +1,4 @@
+import path from 'path';
 import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
@@ -13,4 +14,5 @@ export default defineConfig({
   themeConfig: {
     socialLinks: [{ icon: "github", mode: "link", content: "https://github.com/web-infra-dev/rspress" }],
   },
+  globalStyles: path.join(__dirname, 'src/index.css'),
 });

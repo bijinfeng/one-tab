@@ -6,6 +6,7 @@ export default {
   darkMode: 'selector',
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
+    './docs/**/*.mdx'
   ],
   theme: {
     container: {
