@@ -12,6 +12,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preinstall": "npx -y only-allow pnpm",
+    "build:ui": "pnpm run --filter @onetab/ui build",
     "build:web": "pnpm run --filter @onetab/web-app build"
   },
   "config": {
