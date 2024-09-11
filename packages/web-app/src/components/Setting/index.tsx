@@ -4,7 +4,7 @@ import { useMount } from "ahooks";
 import { useState } from "react";
 
 import { events } from "@/events";
-import { Setting as SettingIcon } from "@/icons";
+import { Icon } from "@onetab/ui";
 import React from "react";
 import packageJson from "../../../package.json";
 import { BasicSetting } from "./BasicSetting";
@@ -62,7 +62,7 @@ export function Setting() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <IconButton size="huge" ghost className="home-setting-btn absolute left-[20px] bottom-[20px]">
-          <SettingIcon width={28} height={28} />
+          <Icon.Setting width={28} height={28} />
         </IconButton>
       </DialogTrigger>
       <DialogContent className="flex w-[720px] max-w-[720px] h-[572px] max-h-[calc(100vh-88px)] p-0 overflow-hidden gap-0">

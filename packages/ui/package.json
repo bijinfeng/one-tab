@@ -3,22 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.mjs",
-  "types": "dist/esm/index.d.mts",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "files": [
     "dist",
     "icon"
   ],
   "exports": {
     ".": {
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/esm/index.d.mts"
-    },
-    "./icon": {
-      "types": "./icon/index.d.ts",
-      "default": "./icon/index.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs",
+      "types": "./dist/esm/index.d.ts"
     }
   },
   "scripts": {
@@ -26,7 +22,7 @@
     "dev": "rspress dev",
     "build:doc": "rspress build",
     "preview": "rspress preview",
-    "build:icon": "iconfont-h5"
+    "svgr": "npx @svgr/cli --config-file svgo.config.cjs assets/icons"
   },
   "keywords": [],
   "author": "bijinfeng",
@@ -34,13 +30,13 @@
   "devDependencies": {
     "@rsbuild/plugin-react": "1.0.1-rc.4",
     "@rslib/core": "^0.0.5",
+    "@svgr/cli": "^8.1.0",
     "@types/react": "^18.3.3",
     "@types/upng-js": "^2.1.5",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
     "postcss-loader": "^8.1.1",
     "react": "^18.3.1",
-    "react-iconfont-cli": "^2.0.2",
     "rspress": "^1.28.0",
     "tailwindcss": "^3.4.10",
     "ts-node": "^10.9.2",

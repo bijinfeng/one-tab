@@ -1,7 +1,16 @@
 import type { SVGProps } from "react";
 import { Ref, forwardRef } from "react";
-const SvgAddCircle = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" ref={ref} {...props}>
+const SvgAddCircle = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    ref={ref}
+    {...props}
+  >
     <g fill="currentColor" fillRule="evenodd">
       <path
         fillRule="nonzero"

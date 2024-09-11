@@ -1,5 +1,5 @@
 import { IconButton } from "@/components/IconButton";
-import { AddCircle } from "@/icons";
+import { Icon } from "@onetab/ui";
 import { Popover, PopoverContent, PopoverTrigger, cn } from "@pingtou/shadcn-ui";
 import { useRef, useState } from "react";
 
@@ -50,7 +50,7 @@ export const AddCategory = () => {
     <Popover>
       <PopoverTrigger asChild>
         <IconButton size="huge" ghost>
-          <AddCircle width={28} height={28} />
+          <Icon.AddCircle width={28} height={28} />
         </IconButton>
       </PopoverTrigger>
 

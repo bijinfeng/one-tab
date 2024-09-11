@@ -8,7 +8,6 @@
     "dev": "rsbuild dev",
     "build": "rsbuild build",
     "build:lib": "father build",
-    "svgr": "npx @svgr/cli --config-file svgo.config.cjs src/assets/icons",
     "preview": "rsbuild preview"
   },
   "dependencies": {
@@ -36,7 +35,6 @@
     "@rsbuild/core": "1.0.1-rc.4",
     "@rsbuild/plugin-image-compress": "^1.0.2",
     "@rsbuild/plugin-react": "1.0.1-rc.4",
-    "@svgr/cli": "^8.1.0",
     "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
