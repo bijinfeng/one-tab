@@ -1,5 +1,6 @@
-import { Button, Drawer, DrawerContent, DrawerTrigger } from "@pingtou/shadcn-ui";
-import { FC } from "react";
+import { Button } from '@onetab/ui'
+import { Drawer, DrawerContent, DrawerTrigger } from '@pingtou/shadcn-ui'
+import type { FC } from 'react'
 
 export const CustomEngines: FC = () => {
   return (
@@ -12,5 +13,5 @@ export const CustomEngines: FC = () => {
         <DrawerContent></DrawerContent>
       </Drawer>
     </div>
-  );
-};
+  )
+}
