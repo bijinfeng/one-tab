@@ -21,7 +21,7 @@
     "@rsbuild/plugin-react": "1.0.1-rc.4"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "esno": "^4.7.0",
     "onetab": "workspace:*",
