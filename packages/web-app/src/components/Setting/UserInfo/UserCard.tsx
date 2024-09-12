@@ -1,17 +1,17 @@
-import { cn } from "@pingtou/shadcn-ui";
-import { FC } from "react";
+import { cn } from '@onetab/ui'
+import type { FC } from 'react'
 
 interface IUserCardProps {
-  onClick?: () => void;
-  actived?: boolean;
+  onClick?: () => void
+  actived?: boolean
 }
 
 export const UserCard: FC<IUserCardProps> = ({ onClick, actived }) => {
   return (
     <div
       className={cn(
-        "flex h-full items-center rounded-[6px] p-[12px] bg-opacity-90 dark:bg-opacity-10 cursor-pointer hover:bg-color-b3 hover:dark:bg-color-white",
-        { "bg-color-b3 dark:bg-color-white": actived },
+        'flex h-full items-center rounded-[6px] p-[12px] bg-opacity-90 dark:bg-opacity-10 cursor-pointer hover:bg-color-b3 hover:dark:bg-color-white',
+        { 'bg-color-b3 dark:bg-color-white': actived },
       )}
       onClick={onClick}
     >
@@ -23,5 +23,5 @@ export const UserCard: FC<IUserCardProps> = ({ onClick, actived }) => {
         <span className="mt-[1px] truncate font-ali-55 text-[12px] leading-[17px] text-color-t2">登录以同步数据</span>
       </div>
     </div>
-  );
-};
+  )
+}

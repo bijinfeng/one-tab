@@ -1,50 +1,50 @@
-import { IconButton } from "@/components/IconButton";
-import { Icon } from "@onetab/ui";
-import { Popover, PopoverContent, PopoverTrigger, cn } from "@pingtou/shadcn-ui";
-import { useRef, useState } from "react";
+import { IconButton } from '@/components/IconButton'
+import { cn, Icon } from '@onetab/ui'
+import { Popover, PopoverContent, PopoverTrigger } from '@pingtou/shadcn-ui'
+import { useRef, useState } from 'react'
 
 const DEFAULT_CATEGORIES = [
-  { name: "主页", icon: "icon-zhuye" },
-  { name: "设计", icon: "icon-sheji" },
-  { name: "程序", icon: "icon-chengxu" },
-  { name: "图片", icon: "icon-tupian" },
-  { name: "娱乐", icon: "icon-yule" },
-  { name: "购物", icon: "icon-gouwu" },
-  { name: "资讯", icon: "icon-zixun" },
-  { name: "金融", icon: "icon-jinrong" },
-  { name: "阅读", icon: "icon-yuedu" },
-  { name: "工具", icon: "icon-gongju" },
-  { name: "网络", icon: "icon-wangluo" },
-  { name: "产品", icon: "icon-chanpin" },
-  { name: "创意", icon: "icon-chuangyi" },
-  { name: "摄影", icon: "icon-sheying" },
-  { name: "科技", icon: "icon-keji" },
-  { name: "汽车", icon: "icon-qiche" },
-  { name: "旅游", icon: "icon-lvyou" },
-  { name: "地理", icon: "icon-dili" },
-  { name: "天文", icon: "icon-tianwen" },
-  { name: "绘画", icon: "icon-huihua" },
-  { name: "音乐", icon: "icon-yinle" },
-  { name: "健康", icon: "icon-jiankang" },
-  { name: "健身", icon: "icon-jianshen" },
-  { name: "体育", icon: "icon-tiyu" },
-  { name: "餐饮", icon: "icon-canyin" },
-  { name: "建筑", icon: "icon-jianzhu" },
-  { name: "电影", icon: "icon-dianying" },
-  { name: "社交", icon: "icon-shejiao" },
-  { name: "AI工具", icon: "icon-ai" },
-];
+  { name: '主页', icon: 'icon-zhuye' },
+  { name: '设计', icon: 'icon-sheji' },
+  { name: '程序', icon: 'icon-chengxu' },
+  { name: '图片', icon: 'icon-tupian' },
+  { name: '娱乐', icon: 'icon-yule' },
+  { name: '购物', icon: 'icon-gouwu' },
+  { name: '资讯', icon: 'icon-zixun' },
+  { name: '金融', icon: 'icon-jinrong' },
+  { name: '阅读', icon: 'icon-yuedu' },
+  { name: '工具', icon: 'icon-gongju' },
+  { name: '网络', icon: 'icon-wangluo' },
+  { name: '产品', icon: 'icon-chanpin' },
+  { name: '创意', icon: 'icon-chuangyi' },
+  { name: '摄影', icon: 'icon-sheying' },
+  { name: '科技', icon: 'icon-keji' },
+  { name: '汽车', icon: 'icon-qiche' },
+  { name: '旅游', icon: 'icon-lvyou' },
+  { name: '地理', icon: 'icon-dili' },
+  { name: '天文', icon: 'icon-tianwen' },
+  { name: '绘画', icon: 'icon-huihua' },
+  { name: '音乐', icon: 'icon-yinle' },
+  { name: '健康', icon: 'icon-jiankang' },
+  { name: '健身', icon: 'icon-jianshen' },
+  { name: '体育', icon: 'icon-tiyu' },
+  { name: '餐饮', icon: 'icon-canyin' },
+  { name: '建筑', icon: 'icon-jianzhu' },
+  { name: '电影', icon: 'icon-dianying' },
+  { name: '社交', icon: 'icon-shejiao' },
+  { name: 'AI工具', icon: 'icon-ai' },
+]
 
-export const AddCategory = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [nameText, setNameText] = useState(() => DEFAULT_CATEGORIES[0].name);
+export function AddCategory() {
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [nameText, setNameText] = useState(() => DEFAULT_CATEGORIES[0].name)
 
   const handleItemClick = (name: string, index: number) => {
-    setNameText(name);
-    setActiveIndex(index);
-    inputRef.current?.focus();
-  };
+    setNameText(name)
+    setActiveIndex(index)
+    inputRef.current?.focus()
+  }
 
   return (
     <Popover>
@@ -66,7 +66,7 @@ export const AddCategory = () => {
             value={nameText}
             autoFocus
             className="h-full w-full rounded-[6px] bg-color-m2 bg-opacity-[0.08] text-center text-[13px] text-color-t1 text-opacity-60 outline-none font-medium"
-            onChange={(e) => setNameText(e.target.value)}
+            onChange={e => setNameText(e.target.value)}
           />
         </div>
 
@@ -75,14 +75,14 @@ export const AddCategory = () => {
             <div
               key={index}
               className={cn(
-                "cursor-pointer rounded-[8px] w-8 h-8 flex items-center justify-center transition-colors",
+                'cursor-pointer rounded-[8px] w-8 h-8 flex items-center justify-center transition-colors',
                 activeIndex === index
-                  ? "bg-color-white text-color-blue  dark:bg-opacity-[0.08]"
-                  : "text-color-t2 text-opacity-60 hover:bg-color-m2 hover:bg-opacity-[0.06]",
+                  ? 'bg-color-white text-color-blue  dark:bg-opacity-[0.08]'
+                  : 'text-color-t2 text-opacity-60 hover:bg-color-m2 hover:bg-opacity-[0.06]',
               )}
               onClick={() => handleItemClick(item.name, index)}
             >
-              <i className={cn("iconfont text-[28px]", item.icon)} />
+              <i className={cn('iconfont text-[28px]', item.icon)} />
             </div>
           ))}
         </div>
@@ -97,5 +97,5 @@ export const AddCategory = () => {
         </div>
       </PopoverContent>
     </Popover>
-  );
-};
+  )
+}

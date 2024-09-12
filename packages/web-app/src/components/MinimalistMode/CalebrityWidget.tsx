@@ -1,27 +1,28 @@
-import { Copy, Refresh } from "@icon-park/react";
-import { useRequest } from "ahooks";
-import { FC } from "react";
+import { getHitokoto } from '@/api'
+import { IconButton } from '@/components/IconButton'
+import { useClipboard } from '@/hooks'
 
-import { getHitokoto } from "@/api";
-import { IconButton } from "@/components/IconButton";
-import { useClipboard } from "@/hooks";
-import { useCacheStore } from "@/store/cache";
-import { Icon } from "@onetab/ui";
+import { useCacheStore } from '@/store/cache'
+import { Icon, toast } from '@onetab/ui'
+import { useRequest } from 'ahooks'
+import { CopyIcon, RefreshCwIcon } from 'lucide-react'
+import type { FC } from 'react'
 
 export const CalebrityWidget: FC = () => {
-  const { celebrity, updateCache } = useCacheStore();
+  const { celebrity, updateCache } = useCacheStore()
   const { data = celebrity, refresh } = useRequest(() => getHitokoto(), {
-    onSuccess: (data) => updateCache({ celebrity: data }),
-  });
-  const { copyToClipboard } = useClipboard();
+    onSuccess: data => updateCache({ celebrity: data }),
+  })
+  const { copyToClipboard } = useClipboard()
 
   const handleCopy = () => {
     copyToClipboard(data!.hitokoto)?.then(() => {
-      console.log("复制成功");
-    });
-  };
+      toast.success('复制成功')
+    })
+  }
 
-  if (!data) return null;
+  if (!data)
+    return null
 
   return (
     <div className="item-center absolute bottom-[131px] flex flex-col">
@@ -31,21 +32,25 @@ export const CalebrityWidget: FC = () => {
         <Icon.Comma width={20} height={20} className="ml-[12px]" />
         <button className="absolute opacity-0 blur-bg gap-0.5 right-0 flex items-center rounded-[8px] bg-color-white bg-opacity-20 p-[2px] transition-colors group-hover:opacity-100">
           <IconButton size="small" ghost onClick={handleCopy}>
-            <Copy size={16} />
+            <CopyIcon size={16} />
           </IconButton>
           <IconButton size="small" ghost onClick={refresh}>
-            <Refresh size={16} />
+            <RefreshCwIcon size={16} />
           </IconButton>
         </button>
       </div>
       <div className="mt-[16px] flex flex-col items-center font-ali-55 text-[16px] leading-[16px] tracking-[1px] text-[#FFF] opacity-60">
-        <div className="pb-[16px] font-ali-55">《{data.from}》</div>
+        <div className="pb-[16px] font-ali-55">
+          《
+          {data.from}
+          》
+        </div>
         <div className="flex flex-row items-center">
           <div className="mr-[4px] h-[1px] w-[40px] bg-[#FFF]" />
-          {data.from_who || "佚名"}
+          {data.from_who || '佚名'}
           <div className="ml-[4px] h-[1px] w-[40px] bg-[#FFF]" />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

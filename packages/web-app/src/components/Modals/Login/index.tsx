@@ -1,11 +1,10 @@
 import logoBgIcon from '@/assets/images/login-bg.png'
 import logogIcon from '@/assets/onetab-outline.png'
 import { events } from '@/events'
-import { Button, Dialog } from '@onetab/ui'
-import { Form, Input } from '@pingtou/shadcn-ui'
+import { Button, Dialog, Form, Input } from '@onetab/ui'
 import { useMount } from 'ahooks'
 import { useRef, useState } from 'react'
-import type { FormInstance } from '@pingtou/shadcn-ui'
+import type { FormInstance } from '@onetab/ui'
 
 interface FormValue {
   name: string
@@ -31,7 +30,7 @@ export function LoginModal() {
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen} className="max-w-[400px] overflow-hidden h-[551px] bg-color-b3 px-[50px] py-[33px]">
+    <Dialog closable={false} open={open} onOpenChange={setOpen} className="max-w-[400px] overflow-hidden h-[551px] bg-color-b3 px-[50px] py-[33px]">
       <div
         className="pointer-events-none absolute left-0 bottom-0 flex h-[74%] w-full flex-col z-[-1]"
         data-v-782c9a14=""
@@ -64,7 +63,7 @@ export function LoginModal() {
             <Input placeholder="邮箱" className="h-[42px]" />
           </Form.Item>
           <Form.Item name="password" required>
-            <Input placeholder="密码" type="password" className="h-[42px]" />
+            <Input.Password placeholder="密码" className="h-[42px]" />
           </Form.Item>
         </Form>
 
