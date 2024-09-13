@@ -1,13 +1,13 @@
-import { useSearchStore } from "@/store/search";
-import { Checkbox } from "@pingtou/shadcn-ui";
-import { FC } from "react";
+import { useSearchStore } from '@/store/search'
+import { Checkbox } from '@onetab/ui'
+import type { FC } from 'react'
 
 export const DefaultEngines: FC = () => {
-  const { defaultList, currentIdList, toggleDefaultEngine } = useSearchStore();
+  const { defaultList, currentIdList, toggleDefaultEngine } = useSearchStore()
 
   return (
     <div className="px-[70px]">
-      {defaultList.map((item) => (
+      {defaultList.map(item => (
         <div
           key={item.id}
           className="search-list-item group mb-[8px] flex items-center justify-between rounded-[6px] px-[10px] py-[8px] duration-150 hover:bg-color-m2 hover:bg-opacity-[0.06]"
@@ -22,10 +22,10 @@ export const DefaultEngines: FC = () => {
 
           <Checkbox
             checked={currentIdList.includes(item.id)}
-            onCheckedChange={(checked: boolean) => toggleDefaultEngine(item.id, checked)}
+            onChange={(checked: boolean) => toggleDefaultEngine(item.id, checked)}
           />
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
