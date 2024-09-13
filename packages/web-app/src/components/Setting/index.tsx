@@ -1,7 +1,6 @@
 import { IconButton } from '@/components/IconButton'
 import { events } from '@/events'
-import { cn, Dialog, Icon } from '@onetab/ui'
-import { Separator } from '@pingtou/shadcn-ui'
+import { cn, Dialog, Icon, Separator } from '@onetab/ui'
 
 import { useMount } from 'ahooks'
 import React, { useState } from 'react'
