@@ -1,17 +1,14 @@
-import { Button } from '@onetab/ui'
-import { Drawer, DrawerContent, DrawerTrigger } from '@pingtou/shadcn-ui'
-import type { FC } from 'react'
+import { Button, Dialog } from '@onetab/ui'
+import { type FC, useState } from 'react'
 
 export const CustomEngines: FC = () => {
+  const [open, setOpen] = useState(false)
+
   return (
     <div className="px-[70px]">
-      <Drawer direction="left">
-        <DrawerTrigger asChild>
-          <Button className="w-full">添加</Button>
-        </DrawerTrigger>
+      <Button className="w-full" onClick={() => setOpen(true)}>添加</Button>
 
-        <DrawerContent></DrawerContent>
-      </Drawer>
+      <Dialog open={open} onOpenChange={setOpen}></Dialog>
     </div>
   )
 }

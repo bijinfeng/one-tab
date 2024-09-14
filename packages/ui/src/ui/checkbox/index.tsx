@@ -18,17 +18,13 @@ const CheckboxRoot = forwardRef<HTMLLabelElement, CheckboxProps>((props, ref) =>
   }
 
   return (
-    <label ref={ref} className={cn('inline-flex items-center space-x-2 cursor-pointer', className)}>
+    <label ref={ref} className={cn('inline-flex items-center gap-2 cursor-pointer text-sm font-medium leading-none', className)}>
       <CheckboxPrimitive
         checked={indeterminate ? 'indeterminate' : checked}
         onCheckedChange={handleCheckedChange}
         {...rest}
       />
-      {children && (
-        <span className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-          {children}
-        </span>
-      )}
+      {children && (<span>{children}</span>)}
     </label>
   )
 })

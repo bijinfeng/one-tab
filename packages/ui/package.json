@@ -5,20 +5,14 @@
   "description": "",
   "author": "bijinfeng",
   "license": "ISC",
-  "keywords": [],
-  "exports": {
-    ".": {
-      "types": "./dist/esm/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.cjs"
-    }
-  },
+  "keywords": ["onetab"],
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "files": [
     "dist",
-    "icon"
+    "index.css",
+    "tailwind.config.js"
   ],
   "scripts": {
     "build": "rslib build",
@@ -58,7 +52,7 @@
   },
   "devDependencies": {
     "@rsbuild/plugin-react": "1.0.1-rc.4",
-    "@rslib/core": "^0.0.5",
+    "@rslib/core": "^0.0.6",
     "@svgr/cli": "^8.1.0",
     "@types/react": "^18.3.5",
     "@types/upng-js": "^2.1.5",

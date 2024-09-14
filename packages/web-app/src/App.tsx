@@ -1,5 +1,6 @@
 import { useSettingStore } from '@/store/setting'
 import { ConfigProvider } from '@onetab/ui'
+import type { FC } from 'react'
 import { AppMode } from './components/AppMode'
 import { Minimalist } from './components/Minimalist'
 import { MinimalistMode } from './components/MinimalistMode'
@@ -8,11 +9,11 @@ import { Search } from './components/Search'
 import { Setting } from './components/Setting'
 import { Wallpaper } from './components/Wallpaper'
 import { ThemeProvider } from './theme'
-import '@pingtou/shadcn-ui/dist/esm/index.css'
+import '@onetab/ui/index.css'
 import './style/iconfont/style.css'
 import './style/index.css'
 
-function App() {
+export const App: FC = () => {
   const { minimalistMode } = useSettingStore()
 
   return (
@@ -30,5 +31,3 @@ function App() {
     </ConfigProvider>
   )
 }
-
-export default App

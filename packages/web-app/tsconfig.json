@@ -19,12 +19,13 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
 
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "esm"
+    "outDir": "esm",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "include": ["src"]
 }

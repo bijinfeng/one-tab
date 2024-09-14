@@ -1,34 +1,45 @@
-import {
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuItem,
-  ContextMenuShortcut,
-  ContextMenuTrigger,
-} from "@pingtou/shadcn-ui";
-import { FC, PropsWithChildren } from "react";
+import { events } from '@/events'
+import { Dropdown } from '@onetab/ui'
 
-import { events } from "@/events";
+import type { FC, PropsWithChildren } from 'react'
 
 export const ContextAction: FC<PropsWithChildren> = ({ children }) => {
   const handleAddWidget = () => {
-    events.emit("addWidget");
-  };
+    events.emit('addWidget')
+  }
+
+  const menuItems = [
+    {
+      key: 'add-icon',
+      label: '添加图标',
+    },
+    {
+      key: 'add-widget',
+      label: '添加小组件',
+      onClick: handleAddWidget,
+    },
+    {
+      key: 'random-wallpaper',
+      label: '随机壁纸',
+    },
+    {
+      key: 'download-wallpaper',
+      label: '下载壁纸',
+    },
+    {
+      key: 'edit-homepage',
+      label: '编辑主页',
+    },
+    {
+      key: 'search-icon',
+      label: '搜索图标',
+      shortcut: 'Ctrl + F',
+    },
+  ]
 
   return (
-    <ContextMenu>
-      <ContextMenuTrigger asChild>{children}</ContextMenuTrigger>
-
-      <ContextMenuContent className="w-44">
-        <ContextMenuItem>添加图标</ContextMenuItem>
-        <ContextMenuItem onClick={handleAddWidget}>添加小组件</ContextMenuItem>
-        <ContextMenuItem>随机壁纸</ContextMenuItem>
-        <ContextMenuItem>下载壁纸</ContextMenuItem>
-        <ContextMenuItem>编辑主页</ContextMenuItem>
-        <ContextMenuItem>
-          搜索图标
-          <ContextMenuShortcut>Ctrl + F</ContextMenuShortcut>
-        </ContextMenuItem>
-      </ContextMenuContent>
-    </ContextMenu>
-  );
-};
+    <Dropdown trigger="contextmenu" className="w-44" menuItems={menuItems}>
+      {children}
+    </Dropdown>
+  )
+}
