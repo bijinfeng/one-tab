@@ -1,42 +1,35 @@
 {
-  "name": "pnpm-monorepo",
-  "type": "module",
-  "version": "1.0.0",
-  "packageManager": "pnpm@8.15.9",
-  "description": "",
-  "author": "",
-  "keywords": [],
-  "main": "index.js",
-  "scripts": {
-    "prepare": "husky install",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "preinstall": "npx -y only-allow pnpm",
-    "build:ui": "pnpm run --filter @onetab/ui build",
-    "build:web": "pnpm run --filter @onetab/web-app build"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-git"
-    }
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^3.5.1",
-    "@commitlint/cli": "^18.6.1",
-    "@eslint-react/eslint-plugin": "^1.14.1",
-    "commitizen": "^4.3.0",
-    "cz-git": "^1.9.4",
-    "eslint": "^9.10.0",
-    "eslint-plugin-format": "^0.1.2",
-    "eslint-plugin-react-hooks": "5.1.0-beta-26f2496093-20240514",
-    "eslint-plugin-react-refresh": "^0.4.11",
-    "fast-glob": "^3.3.2",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
-    "pnpm": "^8.15.9",
-    "typescript": "^5.6.2"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
-  }
+	"name": "one-tab",
+	"type": "module",
+	"packageManager": "pnpm@8.15.9",
+	"scripts": {
+		"prepare": "husky install",
+		"preinstall": "npx -y only-allow pnpm",
+		"build:ui": "pnpm run --filter @onetab/ui build",
+		"build:web": "pnpm run --filter @onetab/web-app build",
+		"changeset": "changeset",
+		"version": "changeset version"
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-git"
+		}
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.2",
+		"@changesets/cli": "^2.27.8",
+		"@commitlint/cli": "^18.6.1",
+		"commitizen": "^4.3.0",
+		"cz-git": "^1.9.4",
+		"fast-glob": "^3.3.2",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"pnpm": "^8.15.9",
+		"typescript": "^5.6.2"
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome check --write --no-errors-on-unmatched"
+		]
+	}
 }
