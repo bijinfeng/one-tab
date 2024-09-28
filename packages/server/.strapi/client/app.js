@@ -6,9 +6,13 @@ import strapiCloud from "@strapi/plugin-cloud/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
+import customisations from "../../src/admin/app.tsx";
+
 renderAdmin(document.getElementById("strapi"), {
-  plugins: {
-    "strapi-cloud": strapiCloud,
-    "users-permissions": usersPermissions,
-  },
+	customisations,
+
+	plugins: {
+		"strapi-cloud": strapiCloud,
+		"users-permissions": usersPermissions,
+	},
 });
