@@ -1,0 +1,33 @@
+{
+	"kind": "collectionType",
+	"collectionName": "wallpaper_tags",
+	"info": {
+		"singularName": "wallpaper-tag",
+		"pluralName": "wallpaper-tags",
+		"displayName": "Wallpaper Tag"
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"cover": {
+			"allowedTypes": ["images", "files", "videos", "audios"],
+			"type": "media",
+			"multiple": false
+		},
+		"title": {
+			"type": "string"
+		},
+		"tag": {
+			"type": "enumeration",
+			"enum": ["nature"]
+		},
+		"wallpapers": {
+			"type": "relation",
+			"relation": "oneToMany",
+			"target": "api::wallpaper.wallpaper",
+			"mappedBy": "wallpaper_tag"
+		}
+	}
+}

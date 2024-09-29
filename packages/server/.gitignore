@@ -1,3 +1,5 @@
 .strapi/
 .tmp/
 types/
+public/
+src/extensions/documentation
