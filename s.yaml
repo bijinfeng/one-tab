@@ -5,10 +5,10 @@
 
 edition: 3.0.0
 name: ont-tab-app
-access: 'undefined'
+access: "undefined"
 vars:
-  region: "{{ region }}"
-  functionName: "{{ functionName }}"
+  region: "cn-hangzhou"
+  functionName: "one-tab-server"
 resources:
   start_ont_tab:
     component: fc3
