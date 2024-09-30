@@ -4,7 +4,8 @@
 	"info": {
 		"singularName": "wallpaper-tag",
 		"pluralName": "wallpaper-tags",
-		"displayName": "Wallpaper Tag"
+		"displayName": "Wallpaper Tag",
+		"description": ""
 	},
 	"options": {
 		"draftAndPublish": true
@@ -12,22 +13,17 @@
 	"pluginOptions": {},
 	"attributes": {
 		"cover": {
-			"allowedTypes": ["images", "files", "videos", "audios"],
 			"type": "media",
-			"multiple": false
+			"multiple": false,
+			"required": false,
+			"allowedTypes": ["images", "files", "videos", "audios"]
 		},
 		"title": {
 			"type": "string"
 		},
 		"tag": {
 			"type": "enumeration",
-			"enum": ["nature"]
-		},
-		"wallpapers": {
-			"type": "relation",
-			"relation": "oneToMany",
-			"target": "api::wallpaper.wallpaper",
-			"mappedBy": "wallpaper_tag"
+			"enum": ["nature", "architecture"]
 		}
 	}
 }

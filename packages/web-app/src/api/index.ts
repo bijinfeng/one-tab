@@ -40,8 +40,26 @@ export const getHitokoto = async () => {
 
 // 获取壁纸分类
 export const getWallpaperGroup = async () => {
-	const res =
-		await api.get<ResponseCommon<OneTab.WallpaperGroup[]>>("wallpaper-tags");
+	const res = await api.get<ResponseCommon<OneTab.WallpaperGroup[]>>(
+		"wallpaper-tags",
+		{
+			params: {
+				populate: "cover",
+			},
+		},
+	);
+
+	return res.data;
+};
+
+// 获取壁纸列表
+export const getWallpaperList = async (params: { tag: string }) => {
+	const res = await api.get<ResponseCommon<OneTab.Wallpaper[]>>("wallpapers", {
+		params: {
+			"filters[tag][tag][$eq]": params.tag,
+			populate: "photo",
+		},
+	});
 
 	return res.data;
 };

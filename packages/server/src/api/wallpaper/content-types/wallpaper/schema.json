@@ -27,11 +27,10 @@
 			"required": true,
 			"allowedTypes": ["images", "files", "videos", "audios"]
 		},
-		"wallpaper_tag": {
+		"tag": {
 			"type": "relation",
-			"relation": "manyToOne",
-			"target": "api::wallpaper-tag.wallpaper-tag",
-			"inversedBy": "wallpapers"
+			"relation": "oneToOne",
+			"target": "api::wallpaper-tag.wallpaper-tag"
 		}
 	}
 }

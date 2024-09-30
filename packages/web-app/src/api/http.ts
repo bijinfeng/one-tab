@@ -1,8 +1,9 @@
+import { serverUrl } from "@/constants";
 import axios from "axios";
 
 // 创建 axios 实例
 const api = axios.create({
-	baseURL: `${import.meta.env.PUBLIC_SERVER_URL}/api`, // 你的 API 基础链接
+	baseURL: `${serverUrl}/api`, // 你的 API 基础链接
 	timeout: 10000, // 请求超时时间
 	headers: {
 		"Content-Type": "application/json",
