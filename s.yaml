@@ -5,7 +5,7 @@
 
 edition: 3.0.0
 name: ont-tab-app
-access: "{{ access }}"
+access: 'undefined'
 vars:
   region: "{{ region }}"
   functionName: "{{ functionName }}"
