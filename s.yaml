@@ -14,10 +14,9 @@ resources:
     component: fc3
     actions:
       pre-deploy:
-        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install -g pnpm
-        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && pnpm install
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm install
           path: ./packages/server
-        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && pnpm run build
+        - run: export PATH=/usr/local/versions/node/v20.8.1/bin:$PATH && npm run build
           path: ./packages/server
     props:
       region: ${vars.region}
