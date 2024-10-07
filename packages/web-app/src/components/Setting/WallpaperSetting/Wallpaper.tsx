@@ -1,4 +1,4 @@
-import { serverUrl } from "@/constants";
+import { geAssetUrl } from "@/utils";
 import { cn } from "@onetab/ui";
 import type { FC } from "react";
 
@@ -25,7 +25,7 @@ export const Wallpaper: FC<WallpaperProps> = ({
 			)}
 		>
 			<img
-				src={serverUrl + imageUrl}
+				src={geAssetUrl(imageUrl)}
 				alt={data.name}
 				className="scale-100 transition-[transform] duration-300 group-hover:scale-[1.2]"
 			/>
