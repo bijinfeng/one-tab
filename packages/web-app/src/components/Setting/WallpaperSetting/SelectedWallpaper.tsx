@@ -2,13 +2,13 @@ import { getWallpaperGroup } from "@/api";
 import { useRequest } from "ahooks";
 import { createPortal } from "react-dom";
 
-import { type FC, useContext, useState } from "react";
+import { type FC, memo, useContext, useState } from "react";
 import { SettingContext } from "../context";
 import { Wallpaper } from "./Wallpaper";
 import { WallpaperList } from "./WapplaperList";
 
-export const SelectedWallpaper: FC = () => {
-	const { data } = useRequest(getWallpaperGroup);
+export const SelectedWallpaper: FC = memo(() => {
+	const { data } = useRequest(() => getWallpaperGroup());
 	const [activeGroup, setActiveGroup] = useState<OneTab.WallpaperGroup>();
 	const { portalRef } = useContext(SettingContext);
 
@@ -16,7 +16,7 @@ export const SelectedWallpaper: FC = () => {
 
 	return (
 		<>
-			<div className="grid grid-cols-2 gap-3 pt-3">
+			<div className="grid grid-cols-2 gap-3 py-3">
 				{data.data.map((item) => (
 					<Wallpaper
 						key={item.id}
@@ -37,4 +37,4 @@ export const SelectedWallpaper: FC = () => {
 				)}
 		</>
 	);
-};
+});

@@ -27,7 +27,7 @@ export const Wallpaper: FC<WallpaperProps> = ({
 			<img
 				src={geAssetUrl(imageUrl)}
 				alt={data.name}
-				className="scale-100 transition-[transform] duration-300 group-hover:scale-[1.2]"
+				className="scale-100 transition-[transform] duration-300 group-hover:scale-[1.2] w-full h-full cursor-pointer"
 			/>
 			{title && (
 				<div className="absolute inset-0 flex cursor-pointer items-center justify-center bg-color-black bg-opacity-20">

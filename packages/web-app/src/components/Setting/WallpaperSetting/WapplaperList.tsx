@@ -13,7 +13,7 @@ export const WallpaperList: FC<WallpaperListProps> = ({ group, onBack }) => {
 	const { data } = useRequest(() => getWallpaperList({ tag: group.tag }));
 
 	return (
-		<div className="absolute w-full h-full top-0 bg-white">
+		<div className="absolute w-full h-full top-0 bg-white z-20">
 			<div className="flex h-[52px] items-center justify-between border-b border-solid border-color-m2 border-opacity-[0.08] px-[20px] mb:px-[20px]">
 				<div
 					className="flex w-[120px] cursor-pointer items-center text-color-t1"

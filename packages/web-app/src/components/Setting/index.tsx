@@ -79,7 +79,7 @@ export function Setting() {
 				onOpenChange={setOpen}
 				className="w-[720px] max-w-[720px] h-[572px] max-h-[calc(100vh-88px)] p-0 overflow-hidden gap-0"
 			>
-				<div ref={portalRef} className="relative flex h-full">
+				<div ref={portalRef} className="relative flex h-full overflow-hidden">
 					<div className="flex h-full w-[220px] flex-col border-r-[1px] border-color-m2 border-opacity-[0.08] bg-color-b2 bg-opacity-95 setting-bar pointer-events-auto relative z-0">
 						<div className="py-[14px] px-[16px]">
 							<UserCard
@@ -114,7 +114,7 @@ export function Setting() {
 						</div>
 					</div>
 
-					<div className="hi-changes relative h-full changes-view flex-1 bg-color-b3 pointer-events-auto">
+					<div className="hi-changes relative overflow-hidden h-full changes-view flex-1 bg-color-b3 pointer-events-auto">
 						{currentContent ? React.createElement(currentContent) : <Backup />}
 					</div>
 				</div>

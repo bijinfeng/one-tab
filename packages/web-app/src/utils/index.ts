@@ -1,8 +1,12 @@
 import { serverUrl } from "@/constants";
 
-export function isValidURL(url: string) {
-	const regex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
-	return regex.test(url);
+export function isValidURL(urlString: string) {
+	try {
+		new URL(urlString);
+		return true;
+	} catch (e) {
+		return false;
+	}
 }
 
 export const geAssetUrl = (url: string) => {
