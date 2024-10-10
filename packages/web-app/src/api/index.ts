@@ -49,7 +49,7 @@ export const getWallpaperGroup = async () => {
 		},
 	);
 
-	return res.data;
+	return res.data.data;
 };
 
 // 获取壁纸列表
