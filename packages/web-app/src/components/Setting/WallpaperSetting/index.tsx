@@ -1,5 +1,6 @@
 import { Tabs } from "@onetab/ui";
 import type { FC } from "react";
+import { GradientWallpaper } from "./GradientWallpaper";
 import { SelectedWallpaper } from "./SelectedWallpaper";
 
 export const WallpaperSetting: FC = () => {
@@ -12,7 +13,11 @@ export const WallpaperSetting: FC = () => {
 			items={[
 				{ key: "default", label: "精选图片", children: <SelectedWallpaper /> },
 				{ key: "custom", label: "动态壁纸" },
-				{ key: "additional", label: "渐变背景" },
+				{
+					key: "additional",
+					label: "渐变背景",
+					children: <GradientWallpaper />,
+				},
 			]}
 		/>
 	);
