@@ -4,6 +4,9 @@ import { type CLASSIFIED_COLORS, shortlists } from "@/constants";
 import { colorDetector } from "@/utils";
 import { cn } from "@onetab/ui";
 import { type FC, useCallback, useMemo, useState } from "react";
+import { AutoSizer, Grid, type GridCellProps } from "react-virtualized";
+
+const columnCount = 3;
 
 export const GradientWallpaper: FC = () => {
 	const [currentFilter, setCurrentFilter] = useState<CLASSIFIED_COLORS>();
@@ -33,9 +36,31 @@ export const GradientWallpaper: FC = () => {
 		return classifiedColors;
 	}, [currentFilter, classifiedColors, filterPalettes]);
 
+	const cellRenderer = ({
+		columnIndex,
+		key,
+		rowIndex,
+		style,
+	}: GridCellProps) => {
+		const index = rowIndex * columnCount + columnIndex;
+		const data = filteredGradients[index];
+
+		if (!data) return;
+
+		return (
+			<div key={key} style={style} className="p-[6px]">
+				<Palette
+					gradients={data.colors}
+					direction="357deg"
+					className="group h-[114px] cursor-pointer overflow-hidden rounded-[4px]"
+				/>
+			</div>
+		);
+	};
+
 	return (
-		<div>
-			<div className="flex items-center border-b border-color-m2 border-opacity-5 pb-[11px]">
+		<div className="py-2 box-border overflow-hidden h-full flex flex-col">
+			<div className="flex items-center border-b border-color-m2 border-opacity-5 pb-[11px] mx-[40px]">
 				<div
 					className={cn(
 						"flex h-[16px] w-[36px] cursor-pointer items-center justify-center rounded-[8px] border border-solid border-color-m2 bg-color-m2 font-ali-55 text-[12px] leading-none transition-colors border-opacity-10 bg-opacity-5 text-color-t3",
@@ -62,15 +87,21 @@ export const GradientWallpaper: FC = () => {
 				))}
 			</div>
 
-			<div className="grid grid-cols-3 gap-[12px] py-[12px]">
-				{filteredGradients.map((it) => (
-					<Palette
-						key={it.name}
-						gradients={it.colors}
-						direction="357deg"
-						className="group h-[114px] cursor-pointer overflow-hidden rounded-[4px]"
-					/>
-				))}
+			<div className="py-[12px] flex-1 overflow-y-auto">
+				<AutoSizer>
+					{({ height, width }) => (
+						<Grid
+							className="px-[34px]"
+							width={width}
+							height={height}
+							columnCount={columnCount}
+							columnWidth={(width - 40 * 2) / columnCount}
+							rowHeight={126}
+							rowCount={Math.ceil(filteredGradients.length / columnCount)}
+							cellRenderer={cellRenderer}
+						/>
+					)}
+				</AutoSizer>
 			</div>
 		</div>
 	);

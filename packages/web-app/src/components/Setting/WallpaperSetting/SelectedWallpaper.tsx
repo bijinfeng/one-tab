@@ -15,8 +15,8 @@ export const SelectedWallpaper: FC = memo(() => {
 	if (!data || !portalRef.current) return;
 
 	return (
-		<>
-			<div className="grid grid-cols-2 gap-3 py-3">
+		<div className="px-[40px] py-2 box-border overflow-y-auto h-full">
+			<div className="grid grid-cols-2 gap-3">
 				{data.data.map((item) => (
 					<Wallpaper
 						key={item.id}
@@ -35,6 +35,6 @@ export const SelectedWallpaper: FC = memo(() => {
 					/>,
 					portalRef.current,
 				)}
-		</>
+		</div>
 	);
 });

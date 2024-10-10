@@ -323,6 +323,9 @@ importers:
       qiankun:
         specifier: ^2.10.16
         version: 2.10.16
+      react-virtualized:
+        specifier: ^9.22.5
+        version: 9.22.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       zustand:
         specifier: ^4.5.5
         version: 4.5.5(@types/react@18.3.5)(react@18.3.1)
@@ -351,6 +354,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
+      '@types/react-virtualized':
+        specifier: ^9.21.30
+        version: 9.21.30
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.45)
@@ -2495,6 +2501,9 @@ packages:
   '@types/react-dom@18.3.0':
     resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
 
+  '@types/react-virtualized@9.21.30':
+    resolution: {integrity: sha512-4l2TFLQ8BCjNDQlvH85tU6gctuZoEdgYzENQyZHpgTHU7hoLzYgPSOALMAeA58LOWua8AzC6wBivPj1lfl6JgQ==}
+
   '@types/react@18.3.5':
     resolution: {integrity: sha512-WeqMfGJLGuLCqHGYRGHxnKrXcTitc6L/nBUWfWPcTarG3t9PsquqUMuVeXZeca+mglY4Vo5GZjCi0A3Or2lnxA==}
 
@@ -2995,6 +3004,10 @@ packages:
   clone@1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+
+  clsx@1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
 
   clsx@2.0.0:
     resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
@@ -5629,6 +5642,9 @@ packages:
   react-lazy-with-preload@2.2.1:
     resolution: {integrity: sha512-ONSb8gizLE5jFpdHAclZ6EAAKuFX2JydnFXPPPjoUImZlLjGtKzyBS8SJgJq7CpLgsGKh9QCZdugJyEEOVC16Q==}
 
+  react-lifecycles-compat@3.0.4:
+    resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
+
   react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
     engines: {node: '>=0.10.0'}
@@ -5686,6 +5702,12 @@ packages:
     peerDependencies:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'
+
+  react-virtualized@9.22.5:
+    resolution: {integrity: sha512-YqQMRzlVANBv1L/7r63OHa2b0ZsAaDp1UhVNEdUaXI8A5u6hTpA5NYtUueLH2rFuY/27mTGIBl7ZhqFKzw18YQ==}
+    peerDependencies:
+      react: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0
+      react-dom: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -9027,6 +9049,11 @@ snapshots:
     dependencies:
       '@types/react': 18.3.5
 
+  '@types/react-virtualized@9.21.30':
+    dependencies:
+      '@types/prop-types': 15.7.13
+      '@types/react': 18.3.5
+
   '@types/react@18.3.5':
     dependencies:
       '@types/prop-types': 15.7.13
@@ -9570,6 +9597,8 @@ snapshots:
       wrap-ansi: 7.0.0
 
   clone@1.0.4: {}
+
+  clsx@1.2.1: {}
 
   clsx@2.0.0: {}
 
@@ -12624,6 +12653,8 @@ snapshots:
 
   react-lazy-with-preload@2.2.1: {}
 
+  react-lifecycles-compat@3.0.4: {}
+
   react-refresh@0.14.2: {}
 
   react-remove-scroll-bar@2.3.6(@types/react@18.3.5)(react@18.3.1):
@@ -12683,6 +12714,17 @@ snapshots:
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  react-virtualized@9.22.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.25.6
+      clsx: 1.2.1
+      dom-helpers: 5.2.1
+      loose-envify: 1.4.0
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-lifecycles-compat: 3.0.4
 
   react@18.3.1:
     dependencies:
