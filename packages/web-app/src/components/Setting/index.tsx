@@ -1,7 +1,8 @@
 import { IconButton } from "@/components/IconButton";
 import { events } from "@/events";
-import { Dialog, Icon, Separator, cn } from "@onetab/ui";
+import { Dialog, Icon, Separator } from "@onetab/ui";
 
+import { Sidebar } from "@/components/Sidebar";
 import { useMount } from "ahooks";
 import React, { useMemo, useRef, useState } from "react";
 import packageJson from "../../../package.json";
@@ -88,25 +89,12 @@ export function Setting() {
 							/>
 						</div>
 						<Separator className="bg-color-m2 bg-opacity-[0.08]" />
-						<div className="relative max-h-[calc(100%-92px)] flex-1 px-[16px] pt-[32px] pb-[40px] space-y-1">
-							{sidbarMaps.map((item) => (
-								<button
-									key={item.key}
-									type="button"
-									className={cn(
-										"h-[36px] w-full rounded-[6px] py-[8px] pl-[12px] text-left text-[14px] text-color-t2 duration-150 hover:bg-color-white hover:bg-opacity-90 hover:text-color-t1 not-last:mb-[4px] hover:dark:bg-opacity-10",
-										"outline-none",
-										{
-											"bg-color-white bg-opacity-90 text-color-t1  dark:bg-opacity-10":
-												item.key === activeKey,
-										},
-									)}
-									onClick={() => setActiveKey(item.key)}
-								>
-									{item.title}
-								</button>
-							))}
-						</div>
+						<Sidebar
+							items={sidbarMaps}
+							activeKey={activeKey}
+							onItemClick={setActiveKey}
+							className="relative max-h-[calc(100%-92px)] flex-1"
+						/>
 						<div className="absolute left-[28px] bottom-[24px] flex items-center">
 							<p className="font-ali-55 text-[12px] leading-[17px] text-color-t3">
 								{packageJson.version}

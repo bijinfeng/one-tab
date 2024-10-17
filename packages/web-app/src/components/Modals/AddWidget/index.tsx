@@ -1,71 +1,70 @@
-import { WindowControl } from '@/components/WindowControl'
-import { events } from '@/events'
-import { Dialog, Select } from '@onetab/ui'
-import { useMount } from 'ahooks'
-import { useState } from 'react'
-import type { FC } from 'react'
+import { Input } from "@/components/Input";
+import { WindowControl } from "@/components/WindowControl";
+import { events } from "@/events";
+import { Dialog, Select } from "@onetab/ui";
+import { useMount } from "ahooks";
+import { useState } from "react";
+import type { FC } from "react";
 
 export const AddWidgetModal: FC = () => {
-  const [open, setOpen] = useState(false)
+	const [open, setOpen] = useState(false);
 
-  useMount(() => {
-    events.on('addWidget', () => setOpen(true))
-  })
+	useMount(() => {
+		events.on("addWidget", () => setOpen(true));
+	});
 
-  return (
-    <Dialog open={open} onOpenChange={setOpen} mask={false} closable={false} className="w-[1024px] max-w-[calc(100vw-40px)] overflow-hidden h-[640px] max-h-[calc(100vh-40px)] bg-color-m1 bg-opacity-70 backdrop-blur-[40px] rounded-[12px] p-0">
-      <div className="header flex h-[64px] items-center justify-between border-b-[1px] border-color-black border-opacity-5 px-[20px] dark:border-opacity-40 mb:!h-auto mb:flex-col-reverse mb:items-end mb:!p-[20px]">
-        <WindowControl />
+	const handleClose = () => setOpen(false);
 
-        <div className="tags flex gap-[4px] pl-[36px] text-color-t2 mb:self-start mb:pt-[10px] mb:!pl-0">
-          <div className="bg-color-white text-color-t1 cursor-pointer rounded-[6px] px-[12px] py-[4px] transition-colors hover:bg-color-white dark:bg-opacity-[0.2]">
-            <span>全部</span>
-          </div>
-          <div className="cursor-pointer rounded-[6px] px-[12px] py-[4px] transition-colors hover:bg-color-white dark:bg-opacity-[0.2]">
-            <span>最新</span>
-          </div>
-          <div className="cursor-pointer rounded-[6px] px-[12px] py-[4px] transition-colors hover:bg-color-white dark:bg-opacity-[0.2]">
-            <span>AI系列</span>
-          </div>
-          <div className="cursor-pointer rounded-[6px] px-[12px] py-[4px] transition-colors hover:bg-color-white dark:bg-opacity-[0.2]">
-            <span>效率工具</span>
-          </div>
-        </div>
+	return (
+		<Dialog
+			open={open}
+			onOpenChange={setOpen}
+			mask={false}
+			closable={false}
+			className="w-[1024px] max-w-[calc(100vw-40px)] overflow-hidden h-[640px] max-h-[calc(100vh-40px)] bg-color-m1 bg-opacity-70 backdrop-blur-[40px] rounded-[12px] p-0"
+		>
+			<div className="header flex h-[64px] items-center justify-between border-b-[1px] border-color-black border-opacity-5 px-[20px] dark:border-opacity-40 mb:!h-auto mb:flex-col-reverse mb:items-end mb:!p-[20px]">
+				<WindowControl onClose={() => handleClose()} />
 
-        <i className="ml-[8px] mr-[20px] inline-block h-[20px] w-[1px] bg-color-m2/[.12]"></i>
+				<div className="tags flex gap-[4px] pl-[36px] text-color-t2 mb:self-start mb:pt-[10px] mb:!pl-0">
+					<div className="bg-color-white text-color-t1 cursor-pointer rounded-[6px] px-[12px] py-[4px] transition-colors hover:bg-color-white dark:bg-opacity-[0.2]">
+						<span>全部</span>
+					</div>
+					<div className="cursor-pointer rounded-[6px] px-[12px] py-[4px] transition-colors hover:bg-color-white dark:bg-opacity-[0.2]">
+						<span>最新</span>
+					</div>
+					<div className="cursor-pointer rounded-[6px] px-[12px] py-[4px] transition-colors hover:bg-color-white dark:bg-opacity-[0.2]">
+						<span>AI系列</span>
+					</div>
+					<div className="cursor-pointer rounded-[6px] px-[12px] py-[4px] transition-colors hover:bg-color-white dark:bg-opacity-[0.2]">
+						<span>效率工具</span>
+					</div>
+				</div>
 
-        <span className="mode-switch inline-flex rounded-[8px] bg-color-m2/[.06] p-[4px]">
-          <span className="cursor-pointer inline-flex rounded-[4px] p-[2px] bg-color-m1 text-color-t1 dark:bg-[#fff]/[.16]">
-            <i className="iconfont icon-group text-[20px] leading-none"></i>
-          </span>
-          <span className="ml-[8px] cursor-pointer inline-flex rounded-[4px] p-[2px] text-color-t3 hover:bg-color-m2/[.06]">
-            <i className="iconfont icon-bullet_list text-[20px] leading-none"></i>
-          </span>
-        </span>
+				<i className="ml-[8px] mr-[20px] inline-block h-[20px] w-[1px] bg-color-m2/[.12]" />
 
-        <div className="search-wrapper relative ml-3 inline-flex h-[32px] w-[148px] items-center rounded-[8px] bg-color-m2/[.06] p-[9px]">
-          <i className="iconfont icon-magnifier_icon text-[20px] text-color-t2 leading-none"></i>
-          <input
-            type="text"
-            className="w-0 flex-1 bg-[transparent] pl-2 pr-8 text-[14px] leading-[20px] text-color-t1 placeholder-color-t3"
-            placeholder="搜索"
-            maxLength={20}
-          />
-          <i className="leading-none iconfont icon-clear_merge_icon absolute top-1/2 right-2.5 -translate-y-1/2 cursor-pointer text-[16px] text-color-t1"></i>
-        </div>
+				<span className="mode-switch inline-flex rounded-[8px] bg-color-m2/[.06] p-[4px]">
+					<span className="cursor-pointer inline-flex rounded-[4px] p-[2px] bg-color-m1 text-color-t1 dark:bg-[#fff]/[.16]">
+						<i className="iconfont icon-group text-[20px] leading-none" />
+					</span>
+					<span className="ml-[8px] cursor-pointer inline-flex rounded-[4px] p-[2px] text-color-t3 hover:bg-color-m2/[.06]">
+						<i className="iconfont icon-bullet_list text-[20px] leading-none" />
+					</span>
+				</span>
 
-        <i className="flex-1" />
+				<Input className="ml-3" />
 
-        <i className="ml-[8px] mr-[20px] inline-block h-[20px] w-[1px] bg-color-m2/[.12]" />
-        <div className="category flex items-center text-color-t2">
-          <span>添加到：</span>
-          <Select className="w-[180px]" placeholder="Select a fruit" />
-        </div>
-      </div>
+				<i className="flex-1" />
 
-      <div className="content hi-scroll h-[calc(100%-64px)] border-t-[1px] border-color-white border-opacity-20 dark:border-opacity-[0.08]">
-        <div className="box icon-home-small grid grid-cols-[repeat(auto-fill,minmax(440px,1fr))] gap-[24px] py-[20px] pl-[20px] pr-[14px]"></div>
-      </div>
-    </Dialog>
-  )
-}
+				<i className="ml-[8px] mr-[20px] inline-block h-[20px] w-[1px] bg-color-m2/[.12]" />
+				<div className="category flex items-center text-color-t2">
+					<span>添加到：</span>
+					<Select className="w-[180px]" placeholder="Select a fruit" />
+				</div>
+			</div>
+
+			<div className="content hi-scroll h-[calc(100%-64px)] border-t-[1px] border-color-white border-opacity-20 dark:border-opacity-[0.08]" />
+			<div className="box icon-home-small grid grid-cols-[repeat(auto-fill,minmax(440px,1fr))] gap-[24px] py-[20px] pl-[20px] pr-[14px]"></div>
+		</Dialog>
+	);
+};
