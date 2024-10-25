@@ -37,10 +37,10 @@
 	},
 	"devDependencies": {
 		"@onetab/widget-preset": "workspace:*",
-		"@rsbuild/core": "^1.0.2",
+		"@rsbuild/core": "^1.0.17",
 		"@rsbuild/plugin-image-compress": "^1.0.2",
-		"@rsbuild/plugin-react": "^1.0.1",
-		"@rslib/core": "^0.0.6",
+		"@rsbuild/plugin-react": "^1.0.5",
+		"@rslib/core": "^0.0.14",
 		"@types/lodash-es": "^4.17.12",
 		"@types/react": "^18.3.5",
 		"@types/react-dom": "^18.3.0",

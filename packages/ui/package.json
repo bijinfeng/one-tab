@@ -48,8 +48,8 @@
 		"upng-js": "^2.1.0"
 	},
 	"devDependencies": {
-		"@rsbuild/plugin-react": "1.0.1-rc.4",
-		"@rslib/core": "^0.0.6",
+		"@rsbuild/plugin-react": "^1.0.5",
+		"@rslib/core": "^0.0.14",
 		"@svgr/cli": "^8.1.0",
 		"@types/react": "^18.3.5",
 		"@types/upng-js": "^2.1.5",

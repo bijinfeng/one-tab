@@ -1,32 +1,29 @@
 {
-  "name": "@onetab/plugin-react",
-  "version": "1.0.0",
-  "description": "",
-  "author": "bijinfeng",
-  "license": "ISC",
-  "keywords": [],
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "runtime"
-  ],
-  "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub",
-    "start": "esno src/index"
-  },
-  "dependencies": {
-    "@rsbuild/plugin-react": "1.0.1-rc.4"
-  },
-  "devDependencies": {
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "esno": "^4.7.0",
-    "onetab": "workspace:*",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "unbuild": "^2.0.0"
-  }
+	"name": "@onetab/plugin-react",
+	"version": "1.0.0",
+	"description": "",
+	"author": "bijinfeng",
+	"license": "ISC",
+	"keywords": [],
+	"main": "./dist/index.mjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": ["dist", "runtime"],
+	"scripts": {
+		"build": "unbuild",
+		"dev": "unbuild --stub",
+		"start": "esno src/index"
+	},
+	"dependencies": {
+		"@rsbuild/plugin-react": "^1.0.5"
+	},
+	"devDependencies": {
+		"@types/react": "^18.3.5",
+		"@types/react-dom": "^18.3.0",
+		"esno": "^4.7.0",
+		"onetab": "workspace:*",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"unbuild": "^2.0.0"
+	}
 }
