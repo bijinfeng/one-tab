@@ -29,6 +29,7 @@ interface MenuItemType {
 	title?: string;
 	visible?: boolean;
 	onClick?: () => void;
+	className?: string;
 }
 
 interface SubMenuType {
@@ -138,6 +139,7 @@ export const Dropdown: FC<DropdownProps> = (props) => {
 					onSelect={() => handleClick(item)}
 					disabled={item.disabled}
 					title={item.title}
+					className={item.className}
 				>
 					{item.label}
 				</DropdownMenuItem>
