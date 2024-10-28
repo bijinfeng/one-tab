@@ -22,6 +22,17 @@ export interface SettingStoreState {
 
 	iconOpenMethod: "current-tab" | "new-tab"; // 图标打开方式: 当前标签页/新标签页
 	iconSize: "icon-auto" | "icon-l" | "icon-m" | "icon-s"; // 图标大小: 自动/大/中/小
+	hideAddIcon: boolean; // 是否隐藏添加图标
+	hideIconName: boolean; // 是否隐藏图标名称
+	scrollPageEnable: boolean; // 是否开启滚动页面
+
+	searchOpenMethod: "current-tab" | "new-tab"; // 搜索打开方式: 当前标签页/新标签页
+	searchSuggestionsShow: boolean; // 是否显示搜索建议
+	searchHistoryShow: boolean; // 是否显示搜索历史
+	fastSwitchSearchEngine: boolean; // 是否开启快速切换搜索引擎
+	keepSearchInput: boolean; // 是否保留搜索输入框内容
+
+	globalFont: string; // 全局字体
 
 	updateSetting: (setting: Partial<SettingStoreState>) => void;
 }
@@ -47,6 +58,17 @@ export const useSettingStore = create<SettingStoreState>()(
 
 			iconOpenMethod: "new-tab",
 			iconSize: "icon-auto",
+			hideAddIcon: false,
+			hideIconName: false,
+			scrollPageEnable: true,
+
+			searchOpenMethod: "new-tab",
+			searchSuggestionsShow: true,
+			searchHistoryShow: false,
+			fastSwitchSearchEngine: true,
+			keepSearchInput: true,
+
+			globalFont: "design",
 
 			updateSetting: (setting) => set(setting),
 		}),
