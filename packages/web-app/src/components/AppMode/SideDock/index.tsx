@@ -11,13 +11,8 @@ import { CategoryItem } from "./CategoryItem";
 
 export function SideDock() {
 	const containerRef = useRef<HTMLDivElement>(null);
-	const { categoryGroup } = useAppStore();
-	const {
-		leftBarDisplaySide,
-		leftBarDisplayStatus,
-		showCategoryTitle,
-		updateSetting,
-	} = useSettingStore();
+	const { currentCategory, categoryGroup, updateCategory } = useAppStore();
+	const { leftBarDisplaySide, leftBarDisplayStatus, showCategoryTitle, updateSetting } = useSettingStore();
 	const [isOpen, setIsOpen] = useState(false);
 	const isContainerHover = useHover(containerRef);
 
@@ -84,12 +79,9 @@ export function SideDock() {
 				className={cn(
 					"h-full relative home-sidedock icon-drop group glass-sidbar flex w-[52px] flex-col items-center rounded-[16px] bg-color-black bg-opacity-40 py-[8px]",
 					{
-						"-translate-x-[64px]":
-							leftBarDisplayStatus === "auto-hide" && isLeft,
-						"translate-x-[64px]":
-							leftBarDisplayStatus === "auto-hide" && isRight,
-						"transition-all duration-300 delay-100 group-hover:translate-x-0":
-							leftBarDisplayStatus === "auto-hide",
+						"-translate-x-[64px]": leftBarDisplayStatus === "auto-hide" && isLeft,
+						"translate-x-[64px]": leftBarDisplayStatus === "auto-hide" && isRight,
+						"transition-all duration-300 delay-100 group-hover:translate-x-0": leftBarDisplayStatus === "auto-hide",
 						"translate-x-0": isOpen,
 					},
 				)}
@@ -106,6 +98,8 @@ export function SideDock() {
 							key={item.id}
 							data={item}
 							showTitle={showCategoryTitle || isContainerHover}
+							activated={item.id === currentCategory}
+							onClick={() => updateCategory(item.id)}
 						/>
 					))}
 				</div>
@@ -127,10 +121,7 @@ export function SideDock() {
 					<IconButton
 						size="small"
 						ghost
-						className={cn(
-							"absolute -bottom-[28px] opacity-0 group-hover:opacity-100",
-							{ "opacity-100": isOpen },
-						)}
+						className={cn("absolute -bottom-[28px] opacity-0 group-hover:opacity-100", { "opacity-100": isOpen })}
 					>
 						<i className="iconfont icon-single_hover_icon text-[20px] text-color-white text-opacity-40" />
 					</IconButton>

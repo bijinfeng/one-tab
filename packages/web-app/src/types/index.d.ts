@@ -1,55 +1,61 @@
 /// <reference types="@rsbuild/core/types" />
 
 declare namespace OneTab {
-  type Theme = "light" | "dark" | "system";
-  type ThemeMode = "light" | "dark";
-  type WidgetSize = "large" | "small" | "medium" | "mini";
+	type Theme = "light" | "dark" | "system";
+	type ThemeMode = "light" | "dark";
+	type WidgetSize = "large" | "small" | "medium" | "mini";
 
-  interface EngineInfo {
-    id: string;
-    name: string;
-    bgType: string;
-    bgImage: string;
-    bgColor: string;
-    target: string;
-  }
+	interface EngineInfo {
+		id: string;
+		name: string;
+		bgType: string;
+		bgImage: string;
+		bgColor: string;
+		target: string;
+	}
 
-  interface AppInfo {
-    id: string;
-    name: string;
-    type: "site" | "widget";
-  }
+	interface CommonAppInfo {
+		id: string;
+		name: string;
+	}
 
-  interface AppCategory {
-    id: string;
-    iconClass: string;
-    name: string;
-    apps: AppInfo[];
-  }
+	interface WidgetInfo extends CommonAppInfo {
+		type: "widget";
+		widgetSize: WidgetSize;
+		widgetName: string;
+	}
 
-  interface Celebrity {
-    from: string;
-    hitokoto: string;
-    from_who: string;
-  }
+	interface CommonSiteInfo extends CommonAppInfo {
+		type: "site";
+		target: string;
+		bgColor: string;
+		bgType: "color" | "image";
+		origin: "online";
+	}
 
-  interface WidgetInfo {
-    type: "widget";
-    id: string;
-    name: string;
-    widgetSize: WidgetSize;
-    widgetName: string;
-  }
+	interface ImageSiteInfo extends CommonSiteInfo {
+		bgType: "image";
+		bgImage: string;
+	}
 
-  interface SiteInfo {
-    type: "site";
-    id: string;
-    name: string;
-    target: string;
-    bgColor: string;
-    bgImage: string;
-    bgType: string;
-  }
+	interface ColorSiteInfo extends CommonSiteInfo {
+		bgType: "color";
+		bgText: string;
+	}
 
-  type App = WidgetInfo | SiteInfo;
+	type SiteInfo = ImageSiteInfo | ColorSiteInfo;
+	type App = WidgetInfo | SiteInfo;
+
+	interface AppCategory {
+		id: string;
+		iconClass: string;
+		name: string;
+		apps: App[];
+	}
+
+	interface Celebrity {
+		from: string;
+		hitokoto: string;
+		from_who: string;
+	}
 }

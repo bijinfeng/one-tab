@@ -127,53 +127,29 @@ export const BasicSetting = () => {
 			<Block.Content>
 				<Block.Item
 					label="侧边栏"
-					control={
-						<Select
-							value={leftBarDisplayStatus}
-							menuItems={leftBarDisplayStatusMenu}
-						/>
-					}
+					control={<Select value={leftBarDisplayStatus} menuItems={leftBarDisplayStatusMenu} />}
 				/>
 				<Block.Item
 					label="侧边栏位置"
-					control={
-						<Select
-							value={leftBarDisplaySide}
-							menuItems={leftBarDisplaySideMenu}
-						/>
-					}
+					control={<Select value={leftBarDisplaySide} menuItems={leftBarDisplaySideMenu} />}
 				/>
 				<Block.Item
 					label="底部栏"
-					control={
-						<Select
-							value={bottomBarDisplayStatus}
-							menuItems={bottomBarDisplayStatusMenu}
-						/>
-					}
+					control={<Select value={bottomBarDisplayStatus} menuItems={bottomBarDisplayStatusMenu} />}
 				/>
 			</Block.Content>
 			<Block.Separator />
 			<Block.Title>图标</Block.Title>
 			<Block.Content>
-				<Block.Item
-					label="打开方式"
-					control={
-						<Select value={iconOpenMethod} menuItems={iconOpenMethodMenu} />
-					}
-				/>
-				<Block.Item
-					label="图标尺寸"
-					control={<Select value={iconSize} menuItems={iconSizeMenu} />}
-				/>
+				<Block.Item label="打开方式" control={<Select value={iconOpenMethod} menuItems={iconOpenMethodMenu} />} />
+				<Block.Item label="图标尺寸" control={<Select value={iconSize} menuItems={iconSizeMenu} />} />
 				<Block.Item
 					label="隐藏添加图标"
 					control={
 						<Switch
+							size="small"
 							checked={hideAddIcon}
-							onCheckedChange={(checked) =>
-								updateSetting({ hideAddIcon: checked })
-							}
+							onCheckedChange={(checked) => updateSetting({ hideAddIcon: checked })}
 						/>
 					}
 				/>
@@ -181,10 +157,9 @@ export const BasicSetting = () => {
 					label="隐藏图标名称"
 					control={
 						<Switch
+							size="small"
 							checked={hideIconName}
-							onCheckedChange={(checked) =>
-								updateSetting({ hideIconName: checked })
-							}
+							onCheckedChange={(checked) => updateSetting({ hideIconName: checked })}
 						/>
 					}
 				/>
@@ -192,10 +167,9 @@ export const BasicSetting = () => {
 					label="滚动触发翻页"
 					control={
 						<Switch
+							size="small"
 							checked={scrollPageEnable}
-							onCheckedChange={(checked) =>
-								updateSetting({ scrollPageEnable: checked })
-							}
+							onCheckedChange={(checked) => updateSetting({ scrollPageEnable: checked })}
 						/>
 					}
 				/>
@@ -203,20 +177,14 @@ export const BasicSetting = () => {
 			<Block.Separator />
 			<Block.Title>搜索</Block.Title>
 			<Block.Content>
-				<Block.Item
-					label="打开方式"
-					control={
-						<Select value={searchOpenMethod} menuItems={searchOpenMethodMenu} />
-					}
-				/>
+				<Block.Item label="打开方式" control={<Select value={searchOpenMethod} menuItems={searchOpenMethodMenu} />} />
 				<Block.Item
 					label="搜索建议"
 					control={
 						<Switch
+							size="small"
 							checked={searchSuggestionsShow}
-							onCheckedChange={(checked) =>
-								updateSetting({ searchSuggestionsShow: checked })
-							}
+							onCheckedChange={(checked) => updateSetting({ searchSuggestionsShow: checked })}
 						/>
 					}
 				/>
@@ -224,10 +192,9 @@ export const BasicSetting = () => {
 					label="搜索历史"
 					control={
 						<Switch
+							size="small"
 							checked={searchHistoryShow}
-							onCheckedChange={(checked) =>
-								updateSetting({ searchHistoryShow: checked })
-							}
+							onCheckedChange={(checked) => updateSetting({ searchHistoryShow: checked })}
 						/>
 					}
 				/>
@@ -235,10 +202,9 @@ export const BasicSetting = () => {
 					label="Tab键切换搜索引擎"
 					control={
 						<Switch
+							size="small"
 							checked={fastSwitchSearchEngine}
-							onCheckedChange={(checked) =>
-								updateSetting({ fastSwitchSearchEngine: checked })
-							}
+							onCheckedChange={(checked) => updateSetting({ fastSwitchSearchEngine: checked })}
 						/>
 					}
 				/>
@@ -246,10 +212,9 @@ export const BasicSetting = () => {
 					label="保留搜索框内容"
 					control={
 						<Switch
+							size="small"
 							checked={keepSearchInput}
-							onCheckedChange={(checked) =>
-								updateSetting({ keepSearchInput: checked })
-							}
+							onCheckedChange={(checked) => updateSetting({ keepSearchInput: checked })}
 						/>
 					}
 				/>
@@ -261,10 +226,9 @@ export const BasicSetting = () => {
 					label="使用系统默认字体"
 					control={
 						<Switch
+							size="small"
 							checked={globalFont === "system-ui"}
-							onCheckedChange={(checked) =>
-								updateSetting({ globalFont: checked ? "system-ui" : "design" })
-							}
+							onCheckedChange={(checked) => updateSetting({ globalFont: checked ? "system-ui" : "design" })}
 						/>
 					}
 				/>
