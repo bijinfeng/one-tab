@@ -56,12 +56,7 @@ function renderWidget(item: OneTab.WidgetInfo) {
 }
 
 function renderSite(item: OneTab.SiteInfo) {
-	return (
-		<div className="icon-home">
-			{/* <Skeleton className="w-full h-full bg-color-m1 bg-opacity-60" /> */}
-			<AppWidget data={item} />
-		</div>
-	);
+	return <AppWidget data={item} />;
 }
 
 export const SortableItem: FC<PropsWithChildren<ISortableItemProps>> = ({ item }) => {

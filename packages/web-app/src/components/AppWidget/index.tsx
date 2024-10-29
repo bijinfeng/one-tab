@@ -1,10 +1,19 @@
+import { cn } from "@onetab/ui";
 import type { FC } from "react";
 
-export const AppWidget: FC<{ data: OneTab.SiteInfo }> = ({ data }) => {
+interface AppWidgetProps {
+	data: OneTab.SiteInfo;
+	className?: string;
+}
+
+export const AppWidget: FC<AppWidgetProps> = ({ data, className }) => {
 	if (data.bgType === "image") {
 		return (
 			<section
-				className="hi-icon flex items-center justify-center bg-cover icon-home cursor-pointer overflow-visible icon-drag"
+				className={cn(
+					"hi-icon flex items-center justify-center bg-cover icon-home cursor-pointer overflow-visible icon-drag",
+					className,
+				)}
 				style={{ backgroundColor: data.bgColor, backgroundImage: `url(${data.bgImage})` }}
 			/>
 		);
@@ -12,7 +21,10 @@ export const AppWidget: FC<{ data: OneTab.SiteInfo }> = ({ data }) => {
 
 	return (
 		<section
-			className="hi-icon flex items-center justify-center bg-cover icon-home cursor-pointer overflow-visible icon-drag"
+			className={cn(
+				"hi-icon flex items-center justify-center bg-cover icon-home cursor-pointer overflow-visible icon-drag",
+				className,
+			)}
 			style={{ backgroundColor: data.bgColor }}
 		>
 			<div className="leading-none text-color-white">
