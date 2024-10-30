@@ -19,7 +19,7 @@ export const DEFAULT_CATEGORY: OneTab.AppCategory[] = [
 				bgColor: "rgba(67, 133, 241, 1)",
 				bgType: "color",
 				bgText: "群晖",
-				id: "icon-1hi525e3r56g7xsnqksaen1sv1i",
+				id: "icon-1hi525e3r56ksaen1sv1i",
 				name: "群晖",
 				origin: "online",
 				target: "https://juejin.cn/",

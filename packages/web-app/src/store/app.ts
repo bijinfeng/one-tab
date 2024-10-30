@@ -9,20 +9,20 @@ export interface AppStoreState {
 	currentCategory: string;
 	categoryGroup: OneTab.AppCategory[];
 
-	getCurrentCategoryGroup: () => OneTab.AppCategory;
 	updateCategory: (id: string) => void;
+	updateCategoryGroup: (categoryGroup: OneTab.AppCategory[]) => void;
 }
 
 export const useAppStore = create<AppStoreState>()(
 	persist(
-		(set, get) => ({
+		(set) => ({
 			currentCategory: first(DEFAULT_CATEGORY)!.id,
 			categoryGroup: DEFAULT_CATEGORY,
 
-			getCurrentCategoryGroup: () => get().categoryGroup.find((item) => item.id === get().currentCategory)!,
 			updateCategory: (id) => {
 				set({ currentCategory: id });
 			},
+			updateCategoryGroup: (categoryGroup) => set({ categoryGroup }),
 		}),
 		{
 			name: "onetab-app", // unique name
