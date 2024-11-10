@@ -26,7 +26,6 @@ const getLoadMoreList = async (params: AppListProps, data?: AppFetchData): Promi
 
 export const AppList: FC<AppListProps> = memo((props) => {
 	const ref = useRef<HTMLDivElement>(null);
-	console.log(1111);
 
 	const { data, reload } = useInfiniteScroll<AppFetchData>((d) => getLoadMoreList(props, d), {
 		target: ref,
