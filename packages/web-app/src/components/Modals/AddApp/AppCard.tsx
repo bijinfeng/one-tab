@@ -1,6 +1,15 @@
 import type { FC } from "react";
 
-export const AppCard: FC = () => {
+export interface AppItemData {
+	id: number;
+	target: string;
+	name: string;
+	logo: OneTab.ImageInfo;
+}
+
+export const AppCard: FC<{ data: AppItemData }> = (props) => {
+	const { data } = props;
+
 	return (
 		<div className="group relative h-[132px] cursor-pointer overflow-hidden rounded-[20px] bg-color-white bg-opacity-60 transition-colors hover:bg-opacity-90 hover:shadow-icon-add dark:bg-opacity-10 hover:dark:bg-opacity-20">
 			<div className="mx-auto flex h-full flex-col items-center justify-center">
@@ -8,7 +17,7 @@ export const AppCard: FC = () => {
 					<div className="van-image w-full h-full">
 						<img
 							className="van-image__img"
-							src="https://infinityicon.infinitynewtab.com/user-share-icon/346647fb95fbac4d303c93fa0a4936d3.png?imageMogr2/thumbnail/120x/format/webp/blur/1x0/quality/100|imageslim"
+							src={data.logo.url}
 							alt="logo"
 							style={{ objectFit: "cover", objectPosition: "center center" }}
 						/>
@@ -17,9 +26,7 @@ export const AppCard: FC = () => {
 						<i className="iconfont icon-add_icon2 text-[24px] text-color-white" />
 					</div>
 				</div>
-				<span className="w-full truncate px-[20px] pt-[12px] text-center text-[14px] text-color-t2">
-					爱淘宝
-				</span>
+				<span className="w-full truncate px-[20px] pt-[12px] text-center text-[14px] text-color-t2">{data.name}</span>
 			</div>
 			<button
 				type="button"

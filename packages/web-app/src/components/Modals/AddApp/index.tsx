@@ -8,8 +8,8 @@ import { useRequest } from "ahooks";
 import { useState } from "react";
 import type { FC } from "react";
 
-import { getAppGroup } from "@/api";
-import { AppCard } from "./AppCard";
+import { getAppGroup, getAppList } from "@/api";
+import { AppCard, type AppItemData } from "./AppCard";
 
 const DEFAULT_ITEMS: SideBarItem[] = [
 	{
@@ -19,16 +19,21 @@ const DEFAULT_ITEMS: SideBarItem[] = [
 ];
 
 export const AddAppModal: FC = () => {
+	const [open, setOpen] = useState(false);
+	const [tabKey, setTabKey] = useState("");
+	const [keyword, setKeyword] = useState("");
+
 	const { data = [] } = useRequest(() =>
 		getAppGroup().then((res) =>
 			res.data.map<SideBarItem>((it) => ({
-				key: it.tag,
+				key: it.id,
 				title: it.name,
 			})),
 		),
 	);
-	const [open, setOpen] = useState(false);
-	const [tabKey, setTabKey] = useState("all");
+	const { data: appData } = useRequest(() => getAppList<AppItemData>({ tag: tabKey, keyword }), {
+		refreshDeps: [tabKey, keyword],
+	});
 
 	useMount(() => {
 		events.on("addApp", () => setOpen(true));
@@ -49,7 +54,7 @@ export const AddAppModal: FC = () => {
 					<WindowControl onClose={() => handleClose()} />
 
 					<div className="flex gap-2">
-						<Input className="w-60" />
+						<Input className="w-60" value={keyword} onChange={setKeyword} />
 						<div className="bg-color-white text-color-t1 leading-6 text-sm cursor-pointer rounded-[6px] px-[12px] py-[4px] transition-colors hover:bg-color-white dark:bg-opacity-[0.2]">
 							自定义添加
 						</div>
@@ -64,8 +69,10 @@ export const AddAppModal: FC = () => {
 						className="w-60 overflow-y-auto"
 					/>
 
-					<div className="flex-1 grid grid-cols-4 gap-4 px-[16px] pt-[32px] pb-[40px]">
-						<AppCard />
+					<div className="flex-1 grid grid-cols-4 gap-4 px-[16px] pt-[32px] pb-[40px] overflow-y-auto">
+						{appData?.data.map((item) => (
+							<AppCard key={item.id} data={item} />
+						))}
 					</div>
 				</div>
 			</div>
