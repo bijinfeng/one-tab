@@ -5,11 +5,11 @@ import { events } from "@/events";
 import { Dialog } from "@onetab/ui";
 import { useMount } from "ahooks";
 import { useRequest } from "ahooks";
-import { useState } from "react";
+import { memo, useState } from "react";
 import type { FC } from "react";
 
-import { getAppGroup, getAppList } from "@/api";
-import { AppCard, type AppItemData } from "./AppCard";
+import { getAppGroup } from "@/api";
+import { AppList } from "./AppList";
 
 const DEFAULT_ITEMS: SideBarItem[] = [
 	{
@@ -18,7 +18,7 @@ const DEFAULT_ITEMS: SideBarItem[] = [
 	},
 ];
 
-export const AddAppModal: FC = () => {
+export const AddAppModal: FC = memo(() => {
 	const [open, setOpen] = useState(false);
 	const [tabKey, setTabKey] = useState("");
 	const [keyword, setKeyword] = useState("");
@@ -31,9 +31,6 @@ export const AddAppModal: FC = () => {
 			})),
 		),
 	);
-	const { data: appData } = useRequest(() => getAppList<AppItemData>({ tag: tabKey, keyword }), {
-		refreshDeps: [tabKey, keyword],
-	});
 
 	useMount(() => {
 		events.on("addApp", () => setOpen(true));
@@ -69,13 +66,9 @@ export const AddAppModal: FC = () => {
 						className="w-60 overflow-y-auto"
 					/>
 
-					<div className="flex-1 grid grid-cols-4 gap-4 px-[16px] pt-[32px] pb-[40px] overflow-y-auto">
-						{appData?.data.map((item) => (
-							<AppCard key={item.id} data={item} />
-						))}
-					</div>
+					<AppList keyword={keyword} tag={tabKey} />
 				</div>
 			</div>
 		</Dialog>
 	);
-};
+});

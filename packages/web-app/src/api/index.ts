@@ -66,7 +66,7 @@ export const getAppGroup = async () => {
 };
 
 // 获取 APP 列表
-export const getAppList = async <T>(params: { tag: string; keyword: string }) => {
+export const getAppList = async <T>(params: { tag?: string; keyword?: string; page: number; pageSize: number }) => {
 	const tagParam = params.tag ? { app_tags: { $eq: params.tag } } : null;
 	const keywordParam = params.keyword ? { name: { $contains: params.keyword } } : null;
 
@@ -76,6 +76,10 @@ export const getAppList = async <T>(params: { tag: string; keyword: string }) =>
 		params: {
 			populate: "logo",
 			filters: isEmpty(filters) ? null : filters,
+			pagination: {
+				page: params.page,
+				pageSize: params.pageSize,
+			},
 		},
 	});
 

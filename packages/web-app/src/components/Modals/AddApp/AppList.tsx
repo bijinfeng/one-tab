@@ -1,0 +1,47 @@
+import { getAppList } from "@/api";
+import { useInfiniteScroll, useUpdateEffect } from "ahooks";
+import { type FC, memo, useRef } from "react";
+import { AppCard, type AppItemData } from "./AppCard";
+
+interface AppListProps {
+	tag?: string;
+	keyword?: string;
+}
+
+interface AppFetchData {
+	list: AppItemData[];
+	meta: OneTab.ResponseMeta;
+}
+
+const getLoadMoreList = async (params: AppListProps, data?: AppFetchData): Promise<AppFetchData> => {
+	const { page = 0, pageSize = 24 } = data?.meta.pagination || {};
+
+	const res = await getAppList<AppItemData>({ ...params, page: page + 1, pageSize });
+
+	return {
+		list: res.data,
+		meta: res.meta,
+	};
+};
+
+export const AppList: FC<AppListProps> = memo((props) => {
+	const ref = useRef<HTMLDivElement>(null);
+	console.log(1111);
+
+	const { data, reload } = useInfiniteScroll<AppFetchData>((d) => getLoadMoreList(props, d), {
+		target: ref,
+		isNoMore: (d) => !!d?.meta.pagination && d.meta.pagination.page >= d.meta.pagination.pageCount,
+	});
+
+	useUpdateEffect(() => {
+		reload();
+	}, [props.tag, props.keyword]);
+
+	return (
+		<div ref={ref} className="flex-1 grid grid-cols-4 gap-4 px-[16px] pt-[32px] pb-[40px] overflow-y-auto">
+			{data?.list?.map((item) => (
+				<AppCard key={item.id} data={item} />
+			))}
+		</div>
+	);
+});

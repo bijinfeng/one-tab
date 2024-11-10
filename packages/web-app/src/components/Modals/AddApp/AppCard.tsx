@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { type FC, memo } from "react";
 
 export interface AppItemData {
 	id: number;
@@ -7,7 +7,7 @@ export interface AppItemData {
 	logo: OneTab.ImageInfo;
 }
 
-export const AppCard: FC<{ data: AppItemData }> = (props) => {
+export const AppCard: FC<{ data: AppItemData }> = memo((props) => {
 	const { data } = props;
 
 	return (
@@ -28,12 +28,15 @@ export const AppCard: FC<{ data: AppItemData }> = (props) => {
 				</div>
 				<span className="w-full truncate px-[20px] pt-[12px] text-center text-[14px] text-color-t2">{data.name}</span>
 			</div>
-			<button
+			<a
 				type="button"
 				className="absolute top-[12px] right-[12px] hidden text-color-t3 hover:text-color-blue group-hover:block"
+				href={data.target}
+				target="_blank"
+				rel="noreferrer"
 			>
 				<i className="iconfont icon-url_icon align-top" />
-			</button>
+			</a>
 		</div>
 	);
-};
+});

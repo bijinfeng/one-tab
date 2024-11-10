@@ -1,8 +1,10 @@
 declare namespace OneTab {
 	interface ResponseMeta {
-		pagination: number;
-		page: number;
-		pageSie: number;
-		total: number;
+		pagination: {
+			page: number;
+			pageSize: number;
+			pageCount: number;
+			total: number;
+		};
 	}
 }
