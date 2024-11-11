@@ -1,4 +1,5 @@
 import { getAppList } from "@/api";
+import { useAppStore } from "@/store/app";
 import { useDebounceEffect, useInfiniteScroll } from "ahooks";
 import { type FC, memo, useRef } from "react";
 import { AppCard, type AppItemData } from "./AppCard";
@@ -25,6 +26,7 @@ const getLoadMoreList = async (params: AppListProps, data?: AppFetchData): Promi
 };
 
 export const AppList: FC<AppListProps> = memo((props) => {
+	const { addImageSiteApp } = useAppStore();
 	const ref = useRef<HTMLDivElement>(null);
 
 	const { data, reload } = useInfiniteScroll<AppFetchData>((d) => getLoadMoreList(props, d), {
@@ -38,7 +40,7 @@ export const AppList: FC<AppListProps> = memo((props) => {
 	return (
 		<div ref={ref} className="flex-1 grid grid-cols-4 gap-4 px-[16px] pt-[32px] pb-[40px] overflow-y-auto">
 			{data?.list?.map((item) => (
-				<AppCard key={item.id} data={item} />
+				<AppCard key={item.id} data={item} onAdd={addImageSiteApp} />
 			))}
 		</div>
 	);

@@ -11,6 +11,7 @@ export interface AppStoreState {
 
 	updateCategory: (id: string) => void;
 	updateCategoryGroup: (categoryGroup: OneTab.AppCategory[]) => void;
+	addImageSiteApp: (app: OneTab.ImageSiteInfo) => void;
 }
 
 export const useAppStore = create<AppStoreState>()(
@@ -23,6 +24,17 @@ export const useAppStore = create<AppStoreState>()(
 				set({ currentCategory: id });
 			},
 			updateCategoryGroup: (categoryGroup) => set({ categoryGroup }),
+			addImageSiteApp: (app) => {
+				set(({ categoryGroup, currentCategory }) => ({
+					categoryGroup: categoryGroup.map((it) => {
+						if (it.id === currentCategory) {
+							return { ...it, apps: [...it.apps, app] };
+						}
+
+						return it;
+					}),
+				}));
+			},
 		}),
 		{
 			name: "onetab-app", // unique name

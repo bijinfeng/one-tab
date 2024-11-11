@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import { type FC, memo } from "react";
 
 export interface AppItemData {
@@ -7,8 +8,26 @@ export interface AppItemData {
 	logo: OneTab.ImageInfo;
 }
 
-export const AppCard: FC<{ data: AppItemData }> = memo((props) => {
-	const { data } = props;
+interface AppCardProps {
+	data: AppItemData;
+	onAdd: (app: OneTab.ImageSiteInfo) => void;
+}
+
+export const AppCard: FC<AppCardProps> = memo((props) => {
+	const { data, onAdd } = props;
+
+	const handleAdd = () => {
+		onAdd({
+			type: "site",
+			id: nanoid(),
+			name: data.name,
+			target: data.target,
+			bgColor: "rgba(0, 0, 0, 0)",
+			bgType: "image",
+			origin: "online",
+			bgImage: data.logo.url,
+		});
+	};
 
 	return (
 		<div className="group relative h-[132px] cursor-pointer overflow-hidden rounded-[20px] bg-color-white bg-opacity-60 transition-colors hover:bg-opacity-90 hover:shadow-icon-add dark:bg-opacity-10 hover:dark:bg-opacity-20">
@@ -34,6 +53,7 @@ export const AppCard: FC<{ data: AppItemData }> = memo((props) => {
 				href={data.target}
 				target="_blank"
 				rel="noreferrer"
+				onClick={handleAdd}
 			>
 				<i className="iconfont icon-url_icon align-top" />
 			</a>
