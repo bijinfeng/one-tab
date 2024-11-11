@@ -1,5 +1,5 @@
 import { getAppList } from "@/api";
-import { useInfiniteScroll, useUpdateEffect } from "ahooks";
+import { useDebounceEffect, useInfiniteScroll } from "ahooks";
 import { type FC, memo, useRef } from "react";
 import { AppCard, type AppItemData } from "./AppCard";
 
@@ -28,13 +28,12 @@ export const AppList: FC<AppListProps> = memo((props) => {
 	const ref = useRef<HTMLDivElement>(null);
 
 	const { data, reload } = useInfiniteScroll<AppFetchData>((d) => getLoadMoreList(props, d), {
+		manual: true,
 		target: ref,
 		isNoMore: (d) => !!d?.meta.pagination && d.meta.pagination.page >= d.meta.pagination.pageCount,
 	});
 
-	useUpdateEffect(() => {
-		reload();
-	}, [props.tag, props.keyword]);
+	useDebounceEffect(() => reload(), [props.tag, props.keyword], { leading: true });
 
 	return (
 		<div ref={ref} className="flex-1 grid grid-cols-4 gap-4 px-[16px] pt-[32px] pb-[40px] overflow-y-auto">
