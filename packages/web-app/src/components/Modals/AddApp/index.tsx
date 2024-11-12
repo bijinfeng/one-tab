@@ -63,7 +63,7 @@ export const AddAppModal: FC = memo(() => {
 						items={[...DEFAULT_ITEMS, ...data]}
 						activeKey={tabKey}
 						onItemClick={setTabKey}
-						className="w-60 overflow-y-auto"
+						className="w-60"
 					/>
 
 					<AppList keyword={keyword} tag={tabKey} />

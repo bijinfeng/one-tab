@@ -2,7 +2,7 @@ import gradients from "@/assets/gradients.json";
 import { Palette } from "@/components/Palette";
 import { type CLASSIFIED_COLORS, shortlists } from "@/constants";
 import { colorDetector } from "@/utils";
-import { cn } from "@onetab/ui";
+import { cn, ScrollArea } from "@onetab/ui";
 import { type FC, useCallback, useMemo, useState } from "react";
 import { AutoSizer, Grid, type GridCellProps } from "react-virtualized";
 
@@ -87,7 +87,7 @@ export const GradientWallpaper: FC = () => {
 				))}
 			</div>
 
-			<div className="py-[12px] flex-1 overflow-y-auto">
+			<ScrollArea className="py-[12px] flex-1">
 				<AutoSizer>
 					{({ height, width }) => (
 						<Grid
@@ -102,7 +102,7 @@ export const GradientWallpaper: FC = () => {
 						/>
 					)}
 				</AutoSizer>
-			</div>
+			</ScrollArea>
 		</div>
 	);
 };

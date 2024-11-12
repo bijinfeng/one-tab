@@ -16,4 +16,7 @@ export * from './ui/switch'
 export * from './ui/tabs'
 export * from './ui/toast'
 export * from './ui/tooltip'
+export * from './ui/scroll-area'
+export * from './ui/sidebar'
+
 export * from './utils'

@@ -1,4 +1,4 @@
-import { cn } from "@onetab/ui";
+import { cn, ScrollArea } from "@onetab/ui";
 import { isString } from "lodash-es";
 import type { CSSProperties, FC, ReactNode } from "react";
 
@@ -31,28 +31,27 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 	};
 
 	return (
-		<div
-			className={cn("px-[16px] pt-[32px] pb-[40px] space-y-1", className)}
-			style={style}
-		>
-			{items.map((item) => (
-				<button
-					key={item.key}
-					type="button"
-					className={cn(
-						"h-[36px] w-full rounded-[6px] py-[8px] pl-[12px] text-left text-[14px] text-color-t2 duration-150 hover:bg-color-white hover:bg-opacity-90 hover:text-color-t1 not-last:mb-[4px] hover:dark:bg-opacity-10",
-						"flex items-center outline-none gap-2 leading-5",
-						{
-							"bg-color-white bg-opacity-90 text-color-t1  dark:bg-opacity-10":
-								item.key === activeKey,
-						},
-					)}
-					onClick={() => onItemClick?.(item.key)}
-				>
-					{item.icon && renderIcon(item)}
-					<span>{item.title}</span>
-				</button>
-			))}
-		</div>
+		<ScrollArea>
+			<div className={cn("px-[16px] pt-[32px] pb-[40px] space-y-1", className)} style={style}>
+				{items.map((item) => (
+					<button
+						key={item.key}
+						type="button"
+						className={cn(
+							"h-[36px] w-full rounded-[6px] py-[8px] pl-[12px] text-left text-[14px] text-color-t2 duration-150 hover:bg-color-white hover:bg-opacity-90 hover:text-color-t1 not-last:mb-[4px] hover:dark:bg-opacity-10",
+							"flex items-center outline-none gap-2 leading-5",
+							{
+								"bg-color-white bg-opacity-90 text-color-t1  dark:bg-opacity-10":
+									item.key === activeKey,
+							},
+						)}
+						onClick={() => onItemClick?.(item.key)}
+					>
+						{item.icon && renderIcon(item)}
+						<span>{item.title}</span>
+					</button>
+				))}
+			</div>
+		</ScrollArea>
 	);
 };

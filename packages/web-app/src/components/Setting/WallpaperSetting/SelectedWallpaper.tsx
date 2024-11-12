@@ -2,6 +2,7 @@ import { getWallpaperGroup } from "@/api";
 import { useCacheStore } from "@/store/cache";
 import { useRequest } from "ahooks";
 import { createPortal } from "react-dom";
+import { ScrollArea } from "@onetab/ui"
 
 import { type FC, memo, useContext, useState } from "react";
 import { SettingContext } from "../context";
@@ -19,7 +20,7 @@ export const SelectedWallpaper: FC = memo(() => {
 	if (!data || !portalRef.current) return;
 
 	return (
-		<div className="px-[40px] py-2 box-border overflow-y-auto h-full">
+		<ScrollArea className="px-[40px] py-2 box-border h-full">
 			<div className="grid grid-cols-2 gap-3">
 				{data.map((item) => (
 					<Wallpaper
@@ -39,6 +40,6 @@ export const SelectedWallpaper: FC = memo(() => {
 					/>,
 					portalRef.current,
 				)}
-		</div>
+		</ScrollArea>
 	);
 });

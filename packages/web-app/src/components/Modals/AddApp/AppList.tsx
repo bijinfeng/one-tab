@@ -2,6 +2,8 @@ import { getAppList } from "@/api";
 import { useAppStore } from "@/store/app";
 import { useDebounceEffect, useInfiniteScroll } from "ahooks";
 import { type FC, memo, useRef } from "react";
+import { ScrollArea } from "@onetab/ui";
+
 import { AppCard, type AppItemData } from "./AppCard";
 
 interface AppListProps {
@@ -38,10 +40,12 @@ export const AppList: FC<AppListProps> = memo((props) => {
 	useDebounceEffect(() => reload(), [props.tag, props.keyword], { leading: true });
 
 	return (
-		<div ref={ref} className="flex-1 grid grid-cols-4 gap-4 px-[16px] pt-[32px] pb-[40px] overflow-y-auto">
-			{data?.list?.map((item) => (
-				<AppCard key={item.id} data={item} onAdd={addImageSiteApp} />
-			))}
-		</div>
+		<ScrollArea ref={ref} className="flex-1">
+			<div className="grid grid-cols-4 gap-4 px-[16px] pt-[32px] pb-[40px]">
+				{data?.list?.map((item) => (
+					<AppCard key={item.id} data={item} onAdd={addImageSiteApp} />
+				))}
+			</div>
+		</ScrollArea>
 	);
 });

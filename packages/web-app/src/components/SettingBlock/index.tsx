@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren, ReactNode } from "react";
+import { ScrollArea } from "@onetab/ui"
 
 const GroupTitle: FC<PropsWithChildren> = (props) => (
   <div className="font-bold text-[16px] text-color-t1">{props.children}</div>
@@ -27,7 +28,7 @@ const GroupContent: FC<PropsWithChildren> = (props) => <div className="pt-[16px]
 const GroupSeparator: FC = () => <div className="border-b border-color-m2 border-opacity-[0.06] my-5" />;
 
 const Group: FC<PropsWithChildren> = (props) => (
-  <div className="h-full main-content px-[70px] py-[40px] hi-scroll">{props.children}</div>
+  <ScrollArea className="h-full main-content px-[70px] py-[40px]">{props.children}</ScrollArea>
 );
 
 export const Block = Object.assign(Group, {

@@ -41,7 +41,7 @@ export const AppCard: FC<AppCardProps> = memo((props) => {
 							style={{ objectFit: "cover", objectPosition: "center center" }}
 						/>
 					</div>
-					<div className="hi-mask absolute left-0 top-0 h-full w-full bg-[#000] bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100 hi-demand">
+					<div onClick={handleAdd} className="hi-mask absolute left-0 top-0 h-full w-full bg-[#000] bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100 hi-demand">
 						<i className="iconfont icon-add_icon2 text-[24px] text-color-white" />
 					</div>
 				</div>
@@ -53,7 +53,6 @@ export const AppCard: FC<AppCardProps> = memo((props) => {
 				href={data.target}
 				target="_blank"
 				rel="noreferrer"
-				onClick={handleAdd}
 			>
 				<i className="iconfont icon-url_icon align-top" />
 			</a>

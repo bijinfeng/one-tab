@@ -14,6 +14,9 @@ export const Wallpaper: FC<WallpaperProps> = ({
 	size,
 	...rest
 }) => {
+
+	console.log(12, data);
+
 	const imageUrl = (size ? data?.formats?.[size]?.url : data.url) ?? data.url;
 
 	return (
