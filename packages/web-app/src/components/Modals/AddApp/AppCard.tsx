@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { type FC, memo } from "react";
+import { Icon } from "@/components/Icon"
 
 export interface AppItemData {
 	id: number;
@@ -42,7 +43,7 @@ export const AppCard: FC<AppCardProps> = memo((props) => {
 						/>
 					</div>
 					<div onClick={handleAdd} className="hi-mask absolute left-0 top-0 h-full w-full bg-[#000] bg-opacity-60 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100 hi-demand">
-						<i className="iconfont icon-add_icon2 text-[24px] text-color-white" />
+						<Icon size={24} name="add_icon2" className="text-color-white" />
 					</div>
 				</div>
 				<span className="w-full truncate px-[20px] pt-[12px] text-center text-[14px] text-color-t2">{data.name}</span>
@@ -54,7 +55,7 @@ export const AppCard: FC<AppCardProps> = memo((props) => {
 				target="_blank"
 				rel="noreferrer"
 			>
-				<i className="iconfont icon-url_icon align-top" />
+				<Icon name="url_icon" className="align-top" />
 			</a>
 		</div>
 	);

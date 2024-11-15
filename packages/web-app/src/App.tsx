@@ -11,7 +11,6 @@ import { Setting } from "./components/Setting";
 import { Wallpaper } from "./components/Wallpaper";
 import { ThemeProvider } from "./theme";
 import "@onetab/ui/index.css";
-import "./style/iconfont/style.css";
 import "./style/index.css";
 
 export const App: FC = () => {

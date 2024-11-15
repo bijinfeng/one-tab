@@ -3,6 +3,7 @@ import { useSearchStore } from '@/store/search'
 import { cn } from '@onetab/ui'
 import { useBoolean, useClickAway, useRequest } from 'ahooks'
 import { isEmpty } from 'lodash-es'
+import { Icon } from "@/components/Icon"
 
 import { useRef, useState } from 'react'
 import { IconButton } from '../IconButton'
@@ -85,7 +86,7 @@ export function Search() {
         {keyword && (
           <div className="absolute top-0 right-0 flex h-full w-[52px] items-center justify-center hi-demand">
             <button type="button" className="h-[32px] w-[32px]" onClick={() => handleInputChange('')}>
-              <i className="iconfont icon-clear_merge_icon text-[16px] text-color-t2 duration-150" />
+              <Icon name="clear_merge_icon" size={16} className='text-color-t2 duration-150' />
             </button>
           </div>
         )}

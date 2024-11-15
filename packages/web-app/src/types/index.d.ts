@@ -48,7 +48,7 @@ declare namespace OneTab {
 
 	interface AppCategory {
 		id: string;
-		iconClass: string;
+		icon: string;
 		name: string;
 		apps: App[];
 	}

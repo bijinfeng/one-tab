@@ -1,11 +1,14 @@
-import oneTabIcon from "@/assets/onetab.png";
-import { IconButton } from "@/components/IconButton";
-import { useAppStore } from "@/store/app";
 
-import { useSettingStore } from "@/store/setting";
 import { Dropdown, type DropdownProps, cn } from "@onetab/ui";
 import { useHover } from "ahooks";
 import { useRef, useState } from "react";
+
+import oneTabIcon from "@/assets/onetab.png";
+import { IconButton } from "@/components/IconButton";
+import { useAppStore } from "@/store/app";
+import { useSettingStore } from "@/store/setting";
+import { Icon } from "@/components/Icon"
+
 import { AddCategory } from "./AddCategory";
 import { CategoryItem } from "./CategoryItem";
 
@@ -123,7 +126,7 @@ export function SideDock() {
 						ghost
 						className={cn("absolute -bottom-[28px] opacity-0 group-hover:opacity-100", { "opacity-100": isOpen })}
 					>
-						<i className="iconfont icon-single_hover_icon text-[20px] text-color-white text-opacity-40" />
+						<Icon size={20} name="single_hover_icon" className="text-color-white text-opacity-40" />
 					</IconButton>
 				</Dropdown>
 			</div>

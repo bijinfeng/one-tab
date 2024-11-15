@@ -1,37 +1,38 @@
 import { IconButton } from '@/components/IconButton'
 import { cn, Icon, Popover } from '@onetab/ui'
 import { useRef, useState } from 'react'
+import { Icon as SvgIcon } from "@/components/Icon"
 
 const DEFAULT_CATEGORIES = [
-  { name: '主页', icon: 'icon-zhuye' },
-  { name: '设计', icon: 'icon-sheji' },
-  { name: '程序', icon: 'icon-chengxu' },
-  { name: '图片', icon: 'icon-tupian' },
-  { name: '娱乐', icon: 'icon-yule' },
-  { name: '购物', icon: 'icon-gouwu' },
-  { name: '资讯', icon: 'icon-zixun' },
-  { name: '金融', icon: 'icon-jinrong' },
-  { name: '阅读', icon: 'icon-yuedu' },
-  { name: '工具', icon: 'icon-gongju' },
-  { name: '网络', icon: 'icon-wangluo' },
-  { name: '产品', icon: 'icon-chanpin' },
-  { name: '创意', icon: 'icon-chuangyi' },
-  { name: '摄影', icon: 'icon-sheying' },
-  { name: '科技', icon: 'icon-keji' },
-  { name: '汽车', icon: 'icon-qiche' },
-  { name: '旅游', icon: 'icon-lvyou' },
-  { name: '地理', icon: 'icon-dili' },
-  { name: '天文', icon: 'icon-tianwen' },
-  { name: '绘画', icon: 'icon-huihua' },
-  { name: '音乐', icon: 'icon-yinle' },
-  { name: '健康', icon: 'icon-jiankang' },
-  { name: '健身', icon: 'icon-jianshen' },
-  { name: '体育', icon: 'icon-tiyu' },
-  { name: '餐饮', icon: 'icon-canyin' },
-  { name: '建筑', icon: 'icon-jianzhu' },
-  { name: '电影', icon: 'icon-dianying' },
-  { name: '社交', icon: 'icon-shejiao' },
-  { name: 'AI工具', icon: 'icon-ai' },
+  { name: '主页', icon: 'zhuye' },
+  { name: '设计', icon: 'sheji' },
+  { name: '程序', icon: 'chengxu' },
+  { name: '图片', icon: 'tupian' },
+  { name: '娱乐', icon: 'yule' },
+  { name: '购物', icon: 'gouwu' },
+  { name: '资讯', icon: 'zixun' },
+  { name: '金融', icon: 'jinrong' },
+  { name: '阅读', icon: 'yuedu' },
+  { name: '工具', icon: 'gongju' },
+  { name: '网络', icon: 'wangluo' },
+  { name: '产品', icon: 'chanpin' },
+  { name: '创意', icon: 'chuangyi' },
+  { name: '摄影', icon: 'sheying' },
+  { name: '科技', icon: 'keji' },
+  { name: '汽车', icon: 'qiche' },
+  { name: '旅游', icon: 'lvyou' },
+  { name: '地理', icon: 'dili' },
+  { name: '天文', icon: 'tianwen' },
+  { name: '绘画', icon: 'huihua' },
+  { name: '音乐', icon: 'yinle' },
+  { name: '健康', icon: 'jiankang' },
+  { name: '健身', icon: 'jianshen' },
+  { name: '体育', icon: 'tiyu' },
+  { name: '餐饮', icon: 'canyin' },
+  { name: '建筑', icon: 'jianzhu' },
+  { name: '电影', icon: 'dianying' },
+  { name: '社交', icon: 'shejiao' },
+  { name: 'AI工具', icon: 'ai' },
 ]
 
 export function AddCategory() {
@@ -66,7 +67,7 @@ export function AddCategory() {
           <div className="grid grid-cols-6 gap-[8px]">
             {DEFAULT_CATEGORIES.map((item, index) => (
               <div
-                key={index}
+                key={item.name}
                 className={cn(
                   'cursor-pointer rounded-[8px] w-8 h-8 flex items-center justify-center transition-colors',
                   activeIndex === index
@@ -75,7 +76,7 @@ export function AddCategory() {
                 )}
                 onClick={() => handleItemClick(item.name, index)}
               >
-                <i className={cn('iconfont text-[28px]', item.icon)} />
+                <SvgIcon name={item.icon} size={28} />
               </div>
             ))}
           </div>

@@ -1,4 +1,5 @@
 import { IconButton } from "@/components/IconButton";
+import { Icon } from "@/components/Icon"
 import { Tooltip, cn } from "@onetab/ui";
 import { useHover } from "ahooks";
 import { useRef } from "react";
@@ -26,7 +27,7 @@ export const CategoryItem: FC<ICategoryItemProps> = ({ data, showTitle, activate
 		>
 			<div ref={containerRef} className="group flex justify-center">
 				<IconButton size="huge" ghost activated={activated} onClick={onClick}>
-					<i className={`${data.iconClass} iconfont text-[28px] leading-none`} />
+					<Icon name={data.icon} size={28} />
 				</IconButton>
 			</div>
 		</Tooltip>

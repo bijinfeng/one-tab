@@ -1,6 +1,7 @@
 import { cn, ScrollArea } from "@onetab/ui";
 import { isString } from "lodash-es";
 import type { CSSProperties, FC, ReactNode } from "react";
+import { Icon } from "@/components/Icon"
 
 export interface SideBarItem {
 	key: string;
@@ -22,9 +23,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
 	const renderIcon = (item: SideBarItem) => {
 		if (isString(item.icon)) {
-			return (
-				<i className={`iconfont icon-${item.icon} text-[20px] leading-none`} />
-			);
+			return <Icon size={20} name={item.icon} />;
 		}
 
 		return item.icon;

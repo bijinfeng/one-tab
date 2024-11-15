@@ -3,6 +3,7 @@ import { Switch } from "@onetab/ui";
 import { useRequest } from "ahooks";
 import type { FC } from "react";
 import { Wallpaper } from "./Wallpaper";
+import { Icon } from "@/components/Icon"
 
 interface WallpaperListProps {
 	onBack: () => void;
@@ -19,7 +20,7 @@ export const WallpaperList: FC<WallpaperListProps> = ({ group, onBack }) => {
 					className="flex w-[120px] cursor-pointer items-center text-color-t1"
 					onClick={onBack}
 				>
-					<i className="iconfont icon-return_icon text-[18px]" />
+					<Icon size={18} name="return_icon" />
 					<span className="ml-[8px] font-ali-65 text-[14px]">返回分类</span>
 				</div>
 				<div className="flex flex-1 items-center justify-center">

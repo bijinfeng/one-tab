@@ -1,6 +1,7 @@
 import { Dropdown, cn } from "@onetab/ui";
 import { useBoolean } from "ahooks";
 import type { FC } from "react";
+import { Icon } from "@/components/Icon";
 
 export interface MenuIten {
 	label: string;
@@ -35,7 +36,7 @@ export const Select: FC<ISelectProps> = ({ value, menuItems }) => {
 						{ "rotate-180": open },
 					)}
 				>
-					<i className="iconfont icon-down_icon text-[12px]" />
+					<Icon size={12} name="down_icon" />
 				</div>
 			</div>
 		</Dropdown>

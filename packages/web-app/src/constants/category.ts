@@ -2,7 +2,7 @@ export const DEFAULT_CATEGORY: OneTab.AppCategory[] = [
 	{
 		id: "category-0",
 		name: "主页",
-		iconClass: "icon-zhuye",
+		icon: "zhuye",
 		apps: [
 			{
 				type: "site",
@@ -29,19 +29,19 @@ export const DEFAULT_CATEGORY: OneTab.AppCategory[] = [
 	{
 		id: "category-1",
 		name: "设计",
-		iconClass: "icon-sheji",
+		icon: "sheji",
 		apps: [],
 	},
 	{
 		id: "category-2",
 		name: "网络",
-		iconClass: "icon-chengxu",
+		icon: "chengxu",
 		apps: [],
 	},
 	{
 		id: "category-3",
 		name: "购物",
-		iconClass: "icon-gouwu",
+		icon: "gouwu",
 		apps: [],
 	},
 ];

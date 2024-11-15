@@ -15,7 +15,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/ui/tooltip"
+} from "@/ui/tooltip/tooltip"
 import { ViewVerticalIcon } from "@radix-ui/react-icons"
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state"
@@ -93,7 +93,7 @@ const SidebarProvider = React.forwardRef<
       return isMobile
         ? setOpenMobile((open) => !open)
         : setOpen((open) => !open)
-    }, [isMobile, setOpen, setOpenMobile])
+    }, [isMobile, setOpen])
 
     // Adds a keyboard shortcut to toggle the sidebar.
     React.useEffect(() => {

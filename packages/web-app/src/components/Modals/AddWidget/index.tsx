@@ -5,6 +5,7 @@ import { Dialog, Select } from "@onetab/ui";
 import { useMount } from "ahooks";
 import { useState } from "react";
 import type { FC } from "react";
+import { Icon } from "@/components/Icon"
 
 export const AddWidgetModal: FC = () => {
 	const [open, setOpen] = useState(false);
@@ -45,10 +46,10 @@ export const AddWidgetModal: FC = () => {
 
 				<span className="mode-switch inline-flex rounded-[8px] bg-color-m2/[.06] p-[4px]">
 					<span className="cursor-pointer inline-flex rounded-[4px] p-[2px] bg-color-m1 text-color-t1 dark:bg-[#fff]/[.16]">
-						<i className="iconfont icon-group text-[20px] leading-none" />
+						<Icon size={20} name="group" />
 					</span>
 					<span className="ml-[8px] cursor-pointer inline-flex rounded-[4px] p-[2px] text-color-t3 hover:bg-color-m2/[.06]">
-						<i className="iconfont icon-bullet_list text-[20px] leading-none" />
+						<Icon size={20} name="bullet_list" />
 					</span>
 				</span>
 
@@ -64,7 +65,7 @@ export const AddWidgetModal: FC = () => {
 			</div>
 
 			<div className="content hi-scroll h-[calc(100%-64px)] border-t-[1px] border-color-white border-opacity-20 dark:border-opacity-[0.08]" />
-			<div className="box icon-home-small grid grid-cols-[repeat(auto-fill,minmax(440px,1fr))] gap-[24px] py-[20px] pl-[20px] pr-[14px]"></div>
+			<div className="box icon-home-small grid grid-cols-[repeat(auto-fill,minmax(440px,1fr))] gap-[24px] py-[20px] pl-[20px] pr-[14px]" />
 		</Dialog>
 	);
 };

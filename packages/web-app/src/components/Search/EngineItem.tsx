@@ -3,6 +3,7 @@ import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { cn } from '@onetab/ui'
 import type { FC } from 'react'
+import { Icon } from "@/components/Icon"
 
 interface EngineItemProps {
   item: OneTab.EngineInfo
@@ -36,7 +37,7 @@ export const EngineItem: FC<EngineItemProps> = ({ item, className, onSwitch }) =
               toggleDefaultEngine(item.id, false)
             }}
           >
-            <i className="iconfont icon-close_icon text-[12px] text-color-t4 transition-[transform,color] duration-300" />
+            <Icon name="close_icon" size={12} className='text-color-t4 transition-[transform,color] duration-300' />
           </section>
         )}
 

@@ -1,5 +1,6 @@
 import { cn } from '@onetab/ui'
 import type { FC } from 'react'
+import { Icon } from '@/components/Icon'
 
 interface IUserCardProps {
   onClick?: () => void
@@ -16,7 +17,7 @@ export const UserCard: FC<IUserCardProps> = ({ onClick, actived }) => {
       onClick={onClick}
     >
       <div className="h-[40px] w-[40px] flex-shrink-0 overflow-hidden rounded-full">
-        <i className="iconfont icon-dengdaisousuo text-[40px] text-color-t4 dark:text-color-t3 leading-none"></i>
+        <Icon className='text-color-t4 dark:text-color-t3' name="dengdaisousuo" size={40} />
       </div>
       <div className="flex flex-1 flex-col items-start overflow-hidden pl-[16px] pr-[10px]">
         <span className="w-full truncate font-ali-65 text-[13px] leading-[18px] text-[#4A7AFF]">登录/注册</span>

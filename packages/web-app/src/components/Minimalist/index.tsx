@@ -2,6 +2,7 @@ import { IconButton } from '@/components/IconButton'
 import { useSettingStore } from '@/store/setting'
 import { cn, Dropdown, Popover } from '@onetab/ui'
 import { useHover } from 'ahooks'
+import { Icon } from "@/components/Icon"
 
 import { type FC, useRef, useState } from 'react'
 import { useWidgets } from './useWidgets'
@@ -54,32 +55,32 @@ export const Minimalist: FC = () => {
               'opacity-100': swtichOpen,
             })}
           >
-            <i className="iconfont icon-single_hover_icon text-[20px]" />
+            <Icon size={20} name='single_hover_icon' />
           </IconButton>
         </Dropdown>
 
         {minimalistMode
           ? (
-              <>
-                <Popover
-                  content={renderWidgets()}
-                  collisionPadding={8}
-                  className="shadow-none border-none h-auto w-[340px] rounded-[20px] bg-color-white bg-opacity-40 p-[12px] backdrop-blur backdrop-saturate-150"
-                >
-                  <IconButton size="large" ghost>
-                    <i className="icon iconfont icon-deploy_icon text-[28px]" />
-                  </IconButton>
-                </Popover>
-                <IconButton size="large" ghost onClick={() => updateSetting({ minimalistMode: false })}>
-                  <i className="icon iconfont icon-standard_icon text-[28px]" />
+            <>
+              <Popover
+                content={renderWidgets()}
+                collisionPadding={8}
+                className="shadow-none border-none h-auto w-[340px] rounded-[20px] bg-color-white bg-opacity-40 p-[12px] backdrop-blur backdrop-saturate-150"
+              >
+                <IconButton size="large" ghost>
+                  <Icon size={28} name='deploy_icon' />
                 </IconButton>
-              </>
-            )
-          : (
-              <IconButton size="large" ghost onClick={() => updateSetting({ minimalistMode: true })}>
-                <i className="icon iconfont icon-minimalism text-[28px]" />
+              </Popover>
+              <IconButton size="large" ghost onClick={() => updateSetting({ minimalistMode: false })}>
+                <Icon size={28} name='standard_icon' />
               </IconButton>
-            )}
+            </>
+          )
+          : (
+            <IconButton size="large" ghost onClick={() => updateSetting({ minimalistMode: true })}>
+              <Icon size={28} name='minimalism' />
+            </IconButton>
+          )}
       </div>
     </div>
   )

@@ -2,6 +2,7 @@ import { cn } from '@onetab/ui'
 import { useKeyPress } from 'ahooks'
 import { isNil } from 'lodash-es'
 import { type FC, useState } from 'react'
+import { Icon } from "@/components/Icon"
 
 interface SuggetionListProps {
   list: string[]
@@ -37,14 +38,14 @@ export const SuggetionList: FC<SuggetionListProps> = ({ list, onSuggestClick, on
       <ul className="list overflow-auto py-[4px]">
         {list.map((item, index) => (
           <li
-            key={index}
+            key={item}
             className={cn(
               'bg-color-m2 bg-opacity-0 li mx-[8px] my-[4px] flex h-[36px] cursor-pointer items-center rounded-[8px] px-[8px] transition-colors hover:bg-opacity-[0.06]',
               { 'bg-opacity-[0.06]': activeIndex === index },
             )}
             onClick={() => onSuggestClick(item)}
           >
-            <i className="iconfont icon-magnifier_icon mr-[16px] text-[20px] text-color-t3" />
+            <Icon size={20} name="magnifier_icon" className="text-color-t3 mr-[16px]" />
             <div className="max-w-[80%] overflow-hidden text-ellipsis whitespace-nowrap text-color-t2">{item}</div>
           </li>
         ))}
