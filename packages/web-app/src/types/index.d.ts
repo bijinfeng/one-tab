@@ -19,10 +19,11 @@ declare namespace OneTab {
 		name: string;
 	}
 
-	interface WidgetInfo extends CommonAppInfo {
+	interface WidgetInfo<T = unknown> extends CommonAppInfo {
 		type: "widget";
 		widgetSize: WidgetSize;
 		widgetName: string;
+		widgetData: T;
 	}
 
 	interface CommonSiteInfo extends CommonAppInfo {

@@ -1,13 +1,5 @@
 import { useSettingStore } from "@/store/setting";
-import {
-	DndContext,
-	type DragOverEvent,
-	MouseSensor,
-	TouchSensor,
-	closestCorners,
-	useSensor,
-	useSensors,
-} from "@dnd-kit/core";
+import { DndContext, type DragOverEvent, PointerSensor, closestCorners, useSensor, useSensors } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
 import { useControllableValue } from "ahooks";
 import { type FC, useCallback, useMemo } from "react";
@@ -24,7 +16,13 @@ export const Sortable: FC<ISortableProps> = (props) => {
 	const { hideAddIcon } = useSettingStore();
 
 	const [items, setItems] = useControllableValue<OneTab.App[]>(props);
-	const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
+	const sensors = useSensors(
+		useSensor(PointerSensor, {
+			activationConstraint: {
+				distance: 8,
+			},
+		}),
+	);
 	const idItems = useMemo(() => items.map((item) => item.id), [items]);
 
 	const handleDragOver = useCallback(

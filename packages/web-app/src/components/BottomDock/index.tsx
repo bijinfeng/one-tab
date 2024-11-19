@@ -1,4 +1,4 @@
-import { AppWidget } from "@/components/AppWidget";
+import { AppSite } from "@/components/AppSite";
 import { useSettingStore } from "@/store/setting";
 import { Tooltip, cn } from "@onetab/ui";
 import { useHover } from "ahooks";
@@ -55,7 +55,7 @@ export const BottomDock: FC = () => {
 							title={<span className="max-w-20 overflow-hidden text-ellipsis whitespace-nowrap">{item.name}</span>}
 						>
 							<div className="h-full inline-flex items-center">
-								<AppWidget data={item} className="!w-[60px] !h-[60px]" />
+								<AppSite data={item} className="!w-[60px] !h-[60px]" />
 							</div>
 						</Tooltip>
 					))}

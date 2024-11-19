@@ -5,6 +5,14 @@ export const DEFAULT_CATEGORY: OneTab.AppCategory[] = [
 		icon: "zhuye",
 		apps: [
 			{
+				id: "icon-1hucc82ogbmodooaojs7ly7f2wh",
+				name: "纪念日",
+				type: "widget",
+				widgetData: { name: "Full In Love", time: 1702051200000, dateType: "solar", timerStyle: {} },
+				widgetName: "widget-memorial-day",
+				widgetSize: "small",
+			},
+			{
 				type: "site",
 				bgColor: "rgba(0, 0, 0, 0)",
 				bgImage: "https://infinityicon.infinitynewtab.com/user-share-icon/534995dd434a6e0e39a4521a5fe04f8e.png",
