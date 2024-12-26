@@ -24,10 +24,16 @@
 		"rules": {
 			"recommended": true,
 			"a11y": {
-				"useKeyWithClickEvents": "off"
+				"useKeyWithClickEvents": "off",
+				"useSemanticElements": "off",
+				"useFocusableInteractive": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off"
 			},
 			"style": {
-				"noNonNullAssertion": "off"
+				"noNonNullAssertion": "off",
+				"noUselessElse": "off"
 			}
 		}
 	},
